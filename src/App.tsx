@@ -1,10 +1,13 @@
 import React from 'react';
 import './App.scss';
+import TopBar from './components/TopBar';
+import Header from './components/Header';
 
 function App() {
   return (
     <div className='App'>
-      <div className=' text-3 font-light'>Hello world</div>
+      <TopBar />
+      <Header />
     </div>
   );
 }

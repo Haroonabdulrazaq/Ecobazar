@@ -1,0 +1,8 @@
+@import './utils.scss';
+
+.top-bar {
+  width: 100%;
+  background: $white;
+  border-bottom: 1px solid $input-grey-outline;
+  padding: 1rem calc(10% - 1rem);
+}
