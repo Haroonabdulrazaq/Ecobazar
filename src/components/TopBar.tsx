@@ -4,36 +4,32 @@ import '../assets/stylesheets/TopBar.scss';
 
 const TopBar = () => {
   return (
-    <div className='top-bar'>
-      <div className='flex justify-between items-center'>
-        <div className='flex items-center space-x-2'>
-          <HiOutlineLocationMarker className='w-4 h-4 text-gray-600' />
-          <span className='text-sm text-gray-700'>
+    <div className='top-bar global-padding'>
+      <div className='top-bar__container'>
+        <div className='top-bar__location'>
+          <HiOutlineLocationMarker className='top-bar__location-icon' />
+          <span className='top-bar__location-text'>
             Store Location: Lincoln- 344, Illinois, Chicago, USA
           </span>
         </div>
 
-        <div className='flex items-center space-x-4'>
-          <div className='hidden sm:flex items-center space-x-1 cursor-pointer'>
-            <span className='text-sm text-gray-700'>Eng</span>
-            <HiChevronDown className='w-3 h-3 text-gray-600' />
+        <div className='top-bar__controls'>
+          <div className='top-bar__dropdown'>
+            <span className='top-bar__dropdown-text'>Eng</span>
+            <HiChevronDown className='top-bar__dropdown-icon' />
           </div>
 
-          <div className='hidden sm:flex items-center space-x-1 cursor-pointer'>
-            <span className='text-sm text-gray-700'>USD</span>
-            <HiChevronDown className='w-3 h-3 text-gray-600' />
+          <div className='top-bar__dropdown'>
+            <span className='top-bar__dropdown-text'>USD</span>
+            <HiChevronDown className='top-bar__dropdown-icon' />
           </div>
 
-          <span className='hidden sm:block text-gray-400'>|</span>
+          <span className='top-bar__divider'>|</span>
 
-          <div className='flex items-center space-x-2'>
-            <span className='text-sm text-gray-700 cursor-pointer hover:text-gray-900'>
-              Sign In
-            </span>
-            <span className='text-sm text-gray-400'>/</span>
-            <span className='text-sm text-gray-700 cursor-pointer hover:text-gray-900'>
-              Sign Up
-            </span>
+          <div className='top-bar__auth'>
+            <span className='top-bar__auth-link'>Sign In</span>
+            <span className='top-bar__auth-separator'>/</span>
+            <span className='top-bar__auth-link'>Sign Up</span>
           </div>
         </div>
       </div>

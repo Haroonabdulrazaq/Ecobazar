@@ -7,14 +7,22 @@ import '../assets/stylesheets/Header.scss';
 const Header = () => {
   return (
     <header className='header'>
-      <div className='header-container flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8'>
-        <div className='logo-section'>
-          <img src={plantLogo} alt='Ecobazar Logo' className='logo-image' />
-          <span className='brand-text'>Ecobazar</span>
+      <div className='header__container global-padding'>
+        <div className='header__logo'>
+          <img
+            src={plantLogo}
+            alt='Ecobazar Logo'
+            className='header__logo-image'
+          />
+          <span className='header__logo-text'>Ecobazar</span>
         </div>
-        <div className='flex w-full max-w-md md:flex-1'>
+
+        <div className='flex w-full max-w-md'>
           <div className='relative flex-1'>
-            <GoSearch className='absolute left-3 top-1/2 -translate-y-1/2 text-gray-500' />
+            <GoSearch
+              className='absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400'
+              size={13}
+            />
             <input
               type='text'
               placeholder='Search'
@@ -27,16 +35,16 @@ const Header = () => {
           </button>
         </div>
 
-        <div className='cart-section'>
-          <div className='wishlist-item'>
+        <div className='header__cart'>
+          <div className='header__cart-wishlist'>
             <GoHeart size={25} />
           </div>
-          <span className='divider'>|</span>
-          <div className='cart-item'>
+          <span className='header__cart-divider'>|</span>
+          <div className='header__cart-item'>
             <PiHandbagThin size={25} />
-            <div className='cart-icon-container'>
-              <span className='text-xs'>shopping cart:</span>
-              <span className='text-sm cart-price'>$57.00</span>
+            <div className='header__cart-icon-container'>
+              <span className='header__cart-text'>shopping cart:</span>
+              <span className='header__cart-price'>$57.00</span>
             </div>
           </div>
         </div>
