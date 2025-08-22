@@ -3,6 +3,7 @@ import './App.scss';
 import TopBar from './components/TopBar';
 import Header from './components/Header';
 import Navigation from './components/Navigation';
+import Carousel from './components/Carousel';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <TopBar />
       <Header />
       <Navigation />
+      <Carousel />
     </div>
   );
 }
