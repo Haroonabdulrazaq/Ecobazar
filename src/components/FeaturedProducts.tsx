@@ -42,7 +42,7 @@ interface BestSeller {
   rating: number;
 }
 
-interface TopRated {
+interface ITopRated {
   id: number;
   name: string;
   image: string;
@@ -144,7 +144,7 @@ const FeaturedProducts = () => {
     },
   ];
 
-  const topRatedData: TopRated[] = [
+  const topRatedData: ITopRated[] = [
     {
       id: 1,
       name: 'Big Potatoes',
@@ -187,8 +187,8 @@ const FeaturedProducts = () => {
   };
 
   return (
-    <div className='featured-products'>
-      <div className='featured-products__container global-padding'>
+    <div className='featured-products global-padding'>
+      <div className='featured-products__container  '>
         <div className='featured-products__header'>
           <h2 className='featured-products__title '>Featured Products</h2>
           <div className='featured-products__underline'>
@@ -198,7 +198,7 @@ const FeaturedProducts = () => {
           </div>
         </div>
 
-        <div className='featured-products__grid'>
+        <div className='featured-products__grid global-padding'>
           {featuredProducts.map(product => (
             <div
               key={product.id}
@@ -207,7 +207,12 @@ const FeaturedProducts = () => {
               onMouseLeave={() => setHoveredProduct(null)}
             >
               <div className='product-card__image'>
-                <img src={product.image} alt={product.name} />
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  title={product.name}
+                  aria-label={product.name}
+                />
 
                 {hoveredProduct === product.id && (
                   <div className='product-card__image-actions'>
@@ -257,7 +262,7 @@ const FeaturedProducts = () => {
           ))}
         </div>
       </div>
-      <div className='featured-products__grid'>
+      <div className='feature_deals__grid global-padding'>
         <Hotdeals
           products={hotDeals}
           hoveredProduct={hoveredProduct}
@@ -281,6 +286,7 @@ const FeaturedProducts = () => {
           setHoveredProduct={setHoveredProduct}
           renderStars={renderStars}
         />
+        <SummerDeals />
       </div>
     </div>
   );
@@ -332,34 +338,34 @@ const Hotdeals = ({
                     <div className='hotdeal-card__stars'>
                       {renderStars(product.rating)}
                     </div>
+
+                    {hoveredProduct === product.id && (
+                      <div className='hotdeal-card__actions'>
+                        <button
+                          className='hotdeal-card__action-btn'
+                          onClick={() => handleIconClick(product.id, 'cart')}
+                          aria-label='Add to cart'
+                        >
+                          <PiHandbagThin size={20} />
+                        </button>
+                        <button
+                          className='hotdeal-card__action-btn'
+                          onClick={() => handleIconClick(product.id, 'eye')}
+                          aria-label='View product'
+                        >
+                          <IoEyeOutline size={20} />
+                        </button>
+                        <button
+                          className='hotdeal-card__action-btn'
+                          onClick={() => handleIconClick(product.id, 'heart')}
+                          aria-label='Add to wishlist'
+                        >
+                          <GoHeart size={20} />
+                        </button>
+                      </div>
+                    )}
                   </div>
                 </div>
-
-                {hoveredProduct === product.id && (
-                  <div className='hotdeal-card__actions'>
-                    <button
-                      className='hotdeal-card__action-btn'
-                      onClick={() => handleIconClick(product.id, 'cart')}
-                      aria-label='Add to cart'
-                    >
-                      <PiHandbagThin size={20} />
-                    </button>
-                    <button
-                      className='hotdeal-card__action-btn'
-                      onClick={() => handleIconClick(product.id, 'eye')}
-                      aria-label='View product'
-                    >
-                      <IoEyeOutline size={20} />
-                    </button>
-                    <button
-                      className='hotdeal-card__action-btn'
-                      onClick={() => handleIconClick(product.id, 'heart')}
-                      aria-label='Add to wishlist'
-                    >
-                      <GoHeart size={20} />
-                    </button>
-                  </div>
-                )}
               </div>
             </div>
           ))}
@@ -413,34 +419,34 @@ const BestSellers = ({
                     <div className='bestseller-card__stars'>
                       {renderStars(product.rating)}
                     </div>
+
+                    {hoveredProduct === product.id && (
+                      <div className='bestseller-card__actions'>
+                        <button
+                          className='bestseller-card__action-btn'
+                          onClick={() => handleIconClick(product.id, 'cart')}
+                          aria-label='Add to cart'
+                        >
+                          <PiHandbagThin size={20} />
+                        </button>
+                        <button
+                          className='bestseller-card__action-btn'
+                          onClick={() => handleIconClick(product.id, 'eye')}
+                          aria-label='View product'
+                        >
+                          <IoEyeOutline size={20} />
+                        </button>
+                        <button
+                          className='bestseller-card__action-btn'
+                          onClick={() => handleIconClick(product.id, 'heart')}
+                          aria-label='Add to wishlist'
+                        >
+                          <GoHeart size={20} />
+                        </button>
+                      </div>
+                    )}
                   </div>
                 </div>
-
-                {hoveredProduct === product.id && (
-                  <div className='bestseller-card__actions'>
-                    <button
-                      className='bestseller-card__action-btn'
-                      onClick={() => handleIconClick(product.id, 'cart')}
-                      aria-label='Add to cart'
-                    >
-                      <PiHandbagThin size={20} />
-                    </button>
-                    <button
-                      className='bestseller-card__action-btn'
-                      onClick={() => handleIconClick(product.id, 'eye')}
-                      aria-label='View product'
-                    >
-                      <IoEyeOutline size={20} />
-                    </button>
-                    <button
-                      className='bestseller-card__action-btn'
-                      onClick={() => handleIconClick(product.id, 'heart')}
-                      aria-label='Add to wishlist'
-                    >
-                      <GoHeart size={20} />
-                    </button>
-                  </div>
-                )}
               </div>
             </div>
           ))}
@@ -457,7 +463,7 @@ const TopRated = ({
   setHoveredProduct,
   renderStars,
 }: {
-  products: TopRated[];
+  products: ITopRated[];
   hoveredProduct: number | null;
   handleIconClick: (productId: number, type: string) => void;
   setHoveredProduct: (id: number | null) => void;
@@ -494,39 +500,52 @@ const TopRated = ({
                     <div className='toprated-card__stars'>
                       {renderStars(product.rating)}
                     </div>
+
+                    {hoveredProduct === product.id && (
+                      <div className='toprated-card__actions'>
+                        <button
+                          className='toprated-card__action-btn'
+                          onClick={() => handleIconClick(product.id, 'cart')}
+                          aria-label='Add to cart'
+                        >
+                          <PiHandbagThin size={20} />
+                        </button>
+                        <button
+                          className='toprated-card__action-btn'
+                          onClick={() => handleIconClick(product.id, 'eye')}
+                          aria-label='View product'
+                        >
+                          <IoEyeOutline size={20} />
+                        </button>
+                        <button
+                          className='toprated-card__action-btn'
+                          onClick={() => handleIconClick(product.id, 'heart')}
+                          aria-label='Add to wishlist'
+                        >
+                          <GoHeart size={20} />
+                        </button>
+                      </div>
+                    )}
                   </div>
                 </div>
-
-                {hoveredProduct === product.id && (
-                  <div className='toprated-card__actions'>
-                    <button
-                      className='toprated-card__action-btn'
-                      onClick={() => handleIconClick(product.id, 'cart')}
-                      aria-label='Add to cart'
-                    >
-                      <PiHandbagThin size={20} />
-                    </button>
-                    <button
-                      className='toprated-card__action-btn'
-                      onClick={() => handleIconClick(product.id, 'eye')}
-                      aria-label='View product'
-                    >
-                      <IoEyeOutline size={20} />
-                    </button>
-                    <button
-                      className='toprated-card__action-btn'
-                      onClick={() => handleIconClick(product.id, 'heart')}
-                      aria-label='Add to wishlist'
-                    >
-                      <GoHeart size={20} />
-                    </button>
-                  </div>
-                )}
               </div>
             </div>
           ))}
         </div>
       </div>
+    </div>
+  );
+};
+
+const SummerDeals = () => {
+  return (
+    <div className='summer-deals'>
+      <img
+        src={require('../assets/images/summer-sales.png')}
+        alt='Summer Deals'
+        aria-label='Summer Deals'
+        title='Summer Deals'
+      />
     </div>
   );
 };

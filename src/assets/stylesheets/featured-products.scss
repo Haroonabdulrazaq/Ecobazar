@@ -4,6 +4,8 @@
 .featured-products {
   margin: 5rem 0;
   text-align: center;
+  width: 100%;
+  overflow-x: hidden;
 
   @include responsive(tab) {
     &__title {
@@ -17,7 +19,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    // padding: 0 2rem;
   }
 
   &__header {
@@ -46,13 +47,14 @@
   }
 
   &__grid {
-    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    flex-wrap: wrap;
     gap: 1rem;
+    @include responsive(tab) {
+      flex-direction: row;
+    }
   }
 }
 
@@ -197,12 +199,10 @@
   }
 }
 
-// Hotdeals, BestSellers, and TopRated Components
 .hotdeals,
 .bestsellers,
 .toprated {
-  margin: 5rem 0;
-
+  width: 100%;
   &__container {
     width: 100%;
   }
@@ -213,9 +213,8 @@
     color: $black;
     margin-bottom: 2rem;
     text-align: left;
-
     @include responsive(tab) {
-      font-size: 2.5rem;
+      font-size: 2rem;
     }
   }
 
@@ -229,14 +228,14 @@
 .hotdeal-card,
 .bestseller-card,
 .toprated-card {
-  background: $white;
   border: 1px solid $input-grey-outline;
-  border-radius: 8px;
+  border-radius: 0.8rem;
   padding: 1rem;
   display: flex;
   align-items: center;
   gap: 1rem;
-  transition: all 0.3s ease;
+  width: 100%;
+  min-width: auto;
   position: relative;
 
   &:hover {
@@ -245,9 +244,9 @@
   }
 
   &__image {
-    width: 80px;
-    height: 80px;
-    border-radius: 8px;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 8rem;
     overflow: hidden;
     flex-shrink: 0;
 
@@ -282,6 +281,7 @@
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
+    position: relative;
   }
 
   &__price {
@@ -308,11 +308,18 @@
   }
 
   &__actions {
+    position: absolute;
+    top: 0;
+    right: 0;
     display: flex;
     gap: 0.5rem;
     opacity: 0;
     transform: translateX(10px);
     transition: all 0.3s ease;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 0.25rem;
+    border-radius: 4px;
   }
 
   &.hovered &__actions {
@@ -337,6 +344,22 @@
       background: $brand-green;
       color: $white;
     }
+  }
+}
+
+.summer-deals {
+  width: 100%;
+  height: 100%;
+  max-width: 31.2rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: stretch;
+
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.8rem;
+    object-fit: cover;
   }
 }
 
@@ -375,48 +398,14 @@
     transform: translateX(-50%) translateY(0);
   }
 }
-
-// Responsive adjustments
-@include responsive(tab) {
-  .featured-products__grid {
-    display: flex;
+.feature_deals__grid {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  @include responsive(tab) {
     flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    gap: 2rem;
-  }
-
-  .product-card {
-    &__content {
-      padding: 1rem;
-    }
-
-    &__title {
-      font-size: 1.2rem;
-    }
-
-    &__price {
-      font-size: 1.4rem;
-    }
-  }
-
-  .hotdeal-card,
-  .bestseller-card,
-  .toprated-card {
-    padding: 0.75rem;
-    gap: 0.75rem;
-
-    &__image {
-      width: 70px;
-      height: 70px;
-    }
-
-    &__title {
-      font-size: 1rem;
-    }
-
-    &__price {
-      font-size: 1.1rem;
-    }
   }
 }
