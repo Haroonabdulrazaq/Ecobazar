@@ -4,6 +4,7 @@ import TopBar from './components/TopBar';
 import Header from './components/Header';
 import Navigation from './components/Navigation';
 import Carousel from './components/Carousel';
+import FeaturedProducts from './components/FeaturedProducts';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Header />
       <Navigation />
       <Carousel />
+      <FeaturedProducts />
     </div>
   );
 }
