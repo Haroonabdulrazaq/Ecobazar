@@ -202,7 +202,7 @@ const FeaturedProducts = () => {
 
   return (
     <div className='featured-products'>
-      <div className='featured-products__container  '>
+      <div className='featured-products__container '>
         <div className='featured-products__header'>
           <h2 className='featured-products__title '>Featured Products</h2>
           <div className='featured-products__underline'>
