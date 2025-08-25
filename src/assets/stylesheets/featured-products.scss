@@ -51,6 +51,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
     gap: 1rem;
     @include responsive(tab) {
       flex-direction: row;
@@ -75,7 +76,7 @@
 
   &__image {
     width: 100%;
-    height: 250px;
+    height: 25rem;
     overflow: hidden;
     background: $light-green;
     position: relative;
@@ -355,11 +356,66 @@
   display: flex;
   align-items: stretch;
 
+  &__image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
   img {
     width: 100%;
     height: 100%;
     border-radius: 0.8rem;
     object-fit: cover;
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    border-radius: 0.8rem;
+  }
+
+  &__title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: $black;
+    margin: 0 0 0.5rem 0;
+    text-align: center;
+  }
+
+  &__discount {
+    font-size: 3.2rem;
+    font-weight: 600;
+    color: $brand-green;
+    margin: 0 0 1.5rem 0;
+    text-align: center;
+  }
+
+  &__button {
+    background: $white;
+    border: none;
+    border-radius: 0.8rem;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: $brand-green;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+
+    &:hover {
+      background: $brand-green;
+      color: $white;
+      transform: translateY(-2px);
+    }
   }
 }
 

@@ -93,6 +93,20 @@ const FeaturedProducts = () => {
       rating: 4,
       image: cornImg,
     },
+    {
+      id: 5,
+      name: 'Green Chilli',
+      price: 4.99,
+      rating: 2.5,
+      image: greenChillyImg,
+    },
+    {
+      id: 6,
+      name: 'Corn',
+      price: 3.99,
+      rating: 4,
+      image: cornImg,
+    },
   ];
 
   const hotDeals: Hotdeal[] = [
@@ -187,7 +201,7 @@ const FeaturedProducts = () => {
   };
 
   return (
-    <div className='featured-products global-padding'>
+    <div className='featured-products'>
       <div className='featured-products__container  '>
         <div className='featured-products__header'>
           <h2 className='featured-products__title '>Featured Products</h2>
@@ -198,7 +212,7 @@ const FeaturedProducts = () => {
           </div>
         </div>
 
-        <div className='featured-products__grid global-padding'>
+        <div className='featured-products__grid'>
           {featuredProducts.map(product => (
             <div
               key={product.id}
@@ -540,12 +554,19 @@ const TopRated = ({
 const SummerDeals = () => {
   return (
     <div className='summer-deals'>
-      <img
-        src={require('../assets/images/summer-sales.png')}
-        alt='Summer Deals'
-        aria-label='Summer Deals'
-        title='Summer Deals'
-      />
+      <div className='summer-deals__image-container'>
+        <img
+          src={require('../assets/images/summer-sales.png')}
+          alt='Summer Deals'
+          aria-label='Summer Deals'
+          title='Summer Deals'
+        />
+        <div className='summer-deals__overlay'>
+          <h3 className='summer-deals__title'>SUMMER SALE</h3>
+          <p className='summer-deals__discount'>75% off</p>
+          <button className='summer-deals__button'>Shop now →</button>
+        </div>
+      </div>
     </div>
   );
 };
