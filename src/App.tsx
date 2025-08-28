@@ -6,6 +6,7 @@ import Navigation from './components/Navigation';
 import Carousel from './components/Carousel';
 import FeaturedProducts from './components/FeaturedProducts';
 import TopCategory from './components/TopCategory';
+import NewProducts from './components/NewProducts';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Carousel />
       <FeaturedProducts />
       <TopCategory />
+      <NewProducts />
     </div>
   );
 }

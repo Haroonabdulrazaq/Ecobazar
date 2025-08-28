@@ -12,14 +12,14 @@ import { FaArrowRight, FaArrowLeft } from 'react-icons/fa6';
 
 import '../assets/stylesheets/top-category.scss';
 
-interface TopCategoryItem {
+interface ITopCategoryItem {
   id: number;
   name: string;
   image: string;
   count: number;
 }
 
-const topCategoryItems: TopCategoryItem[] = [
+const topCategoryItems: ITopCategoryItem[] = [
   {
     id: 1,
     name: 'Vegetables',

@@ -3,52 +3,14 @@ import { IoEyeOutline } from 'react-icons/io5';
 import { PiHandbagThin } from 'react-icons/pi';
 import { FaStar } from 'react-icons/fa';
 import '../assets/stylesheets/featured-products.scss';
-
+import {
+  featuredProducts,
+  hotDeals,
+  bestSellersData,
+  topRatedData,
+} from '../common/data';
 import { useState } from 'react';
-
-// Import images
-import appleImg from '../assets/images/apple.png';
-import chineseCabbageImg from '../assets/images/chinese-cabbage.png';
-import greenLettuceImg from '../assets/images/green-lettuce.png';
-import greenChillyImg from '../assets/images/green-chilly.png';
-import cornImg from '../assets/images/corn.png';
-import EggplantImg from '../assets/images/egg-plant.png';
-import OkraImg from '../assets/images/green-okro.png';
-import RedTomatoImg from '../assets/images/red-tomatoes.png';
-import BigPotatoImg from '../assets/images/big-potatoes.png';
-import FreshCauliflowerImg from '../assets/images/fresh-cauliflower.png';
-
-interface Product {
-  id: number;
-  name: string;
-  image: string;
-  price: number;
-  rating: number;
-}
-
-interface Hotdeal {
-  id: number;
-  name: string;
-  image: string;
-  price: number;
-  rating: number;
-}
-
-interface BestSeller {
-  id: number;
-  name: string;
-  image: string;
-  price: number;
-  rating: number;
-}
-
-interface ITopRated {
-  id: number;
-  name: string;
-  image: string;
-  price: number;
-  rating: number;
-}
+import { IBestSeller, IHotdeal, ITopRated } from '../common/interface';
 
 const FeaturedProducts = () => {
   const [hoveredProduct, setHoveredProduct] = useState<number | null>(null);
@@ -56,131 +18,6 @@ const FeaturedProducts = () => {
     productId: number;
     type: string;
   } | null>(null);
-
-  const featuredProducts: Product[] = [
-    {
-      id: 1,
-      name: 'Green Apple',
-      price: 14.99,
-      rating: 4.5,
-      image: appleImg,
-    },
-    {
-      id: 2,
-      name: 'Chinese Cabbage',
-      price: 4.99,
-      rating: 4.7,
-      image: chineseCabbageImg,
-    },
-    {
-      id: 3,
-      name: 'Green Lettuce',
-      price: 6.99,
-      rating: 4,
-      image: greenLettuceImg,
-    },
-    {
-      id: 4,
-      name: 'Green Chilli',
-      price: 4.99,
-      rating: 2.5,
-      image: greenChillyImg,
-    },
-    {
-      id: 5,
-      name: 'Corn',
-      price: 3.99,
-      rating: 4,
-      image: cornImg,
-    },
-    {
-      id: 5,
-      name: 'Green Chilli',
-      price: 4.99,
-      rating: 2.5,
-      image: greenChillyImg,
-    },
-    {
-      id: 6,
-      name: 'Corn',
-      price: 3.99,
-      rating: 4,
-      image: cornImg,
-    },
-  ];
-
-  const hotDeals: Hotdeal[] = [
-    {
-      id: 1,
-      name: 'Green Apple',
-      price: 14.99,
-      rating: 4.5,
-      image: appleImg,
-    },
-    {
-      id: 2,
-      name: 'Indian Malta',
-      price: 14.99,
-      rating: 4.5,
-      image: appleImg,
-    },
-    {
-      id: 3,
-      name: 'Green Lettuce',
-      price: 6.99,
-      rating: 4,
-      image: greenLettuceImg,
-    },
-  ];
-
-  const bestSellersData: BestSeller[] = [
-    {
-      id: 1,
-      name: 'Egg plant',
-      price: 14.99,
-      rating: 4.5,
-      image: EggplantImg,
-    },
-
-    {
-      id: 2,
-      name: 'Green Okro',
-      price: 3.99,
-      rating: 4.1,
-      image: OkraImg,
-    },
-    {
-      id: 3,
-      name: 'Red Tomatoes',
-      price: 14.99,
-      rating: 4.5,
-      image: RedTomatoImg,
-    },
-  ];
-
-  const topRatedData: ITopRated[] = [
-    {
-      id: 1,
-      name: 'Big Potatoes',
-      price: 14.99,
-      rating: 4.5,
-      image: BigPotatoImg,
-    },
-    {
-      id: 2,
-      name: 'Fresh Cauliflower',
-      price: 14.99,
-      rating: 4.5,
-      image: FreshCauliflowerImg,
-    },
-    {
-      id: 3,
-      name: 'Corn',
-      price: 3.99,
-      rating: 4,
-      image: cornImg,
-    },
-  ];
 
   const renderStars = (rating: number) => {
     const stars = [];
@@ -315,7 +152,7 @@ const Hotdeals = ({
   setHoveredProduct,
   renderStars,
 }: {
-  products: Hotdeal[];
+  products: IHotdeal[];
   hoveredProduct: number | null;
   handleIconClick: (productId: number, type: string) => void;
   setHoveredProduct: (id: number | null) => void;
@@ -396,7 +233,7 @@ const BestSellers = ({
   setHoveredProduct,
   renderStars,
 }: {
-  products: BestSeller[];
+  products: IBestSeller[];
   hoveredProduct: number | null;
   handleIconClick: (productId: number, type: string) => void;
   setHoveredProduct: (id: number | null) => void;
