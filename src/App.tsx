@@ -9,6 +9,7 @@ import TopCategory from './components/TopCategory';
 import NewProducts from './components/NewProducts';
 import Testimonial from './components/Testimonial';
 import Instagram from './components/Instagram';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       <NewProducts />
       <Testimonial />
       <Instagram />
+      <Footer />
     </div>
   );
 }

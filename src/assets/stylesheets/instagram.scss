@@ -12,11 +12,7 @@
     padding: 0 2rem;
 
     @include responsive(tab) {
-      padding: 0 3rem;
-    }
-
-    @include responsive(desktop) {
-      padding: 0 4rem;
+      padding: 3rem 0;
     }
   }
 
