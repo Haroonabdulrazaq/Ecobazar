@@ -3,30 +3,13 @@ import { FaArrowLeft, FaArrowRight, FaTruckFast } from 'react-icons/fa6';
 import { BiSupport } from 'react-icons/bi';
 import { IoBagCheckOutline } from 'react-icons/io5';
 import { PiPackageLight } from 'react-icons/pi';
-import VegetableBasket1 from '../assets/images/vegetable-basket-1.png';
-import VegetableBasket2 from '../assets/images/vegetable-basket-2.png';
-import VegetableBasket3 from '../assets/images/vegetable-basket-3.png';
+import { IPerk } from '../common/interface';
+import { slides } from '../common/data';
+
 import '../assets/stylesheets/Carousel.scss';
 
-interface Slide {
-  id: number;
-  title: string;
-  heading: string;
-  saleText: string;
-  subtitle: string;
-  image: string;
-  isReversed: boolean;
-}
-
-interface Perk {
-  id: number;
-  title: string;
-  subtitle: string;
-  Icon: React.ReactNode;
-}
-
 const Perks = () => {
-  const perks: Perk[] = [
+  const perks: IPerk[] = [
     {
       id: 1,
       title: 'Free Shipping',
@@ -72,36 +55,6 @@ const Perks = () => {
 
 const Carousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-
-  const slides: Slide[] = [
-    {
-      id: 1,
-      title: 'Welcome to Shopery',
-      heading: 'Fresh & Healthy Organic Food',
-      saleText: 'Sale up to 30% OFF',
-      subtitle: 'Free shipping on all your order. we deliver, you enjoy',
-      image: VegetableBasket1,
-      isReversed: false,
-    },
-    {
-      id: 2,
-      title: 'Welcome to Shopery',
-      heading: 'Fresh & Healthy Organic Food',
-      saleText: 'Sale up to 30% OFF',
-      subtitle: 'Free shipping on all your order. we deliver, you enjoy',
-      image: VegetableBasket2,
-      isReversed: true,
-    },
-    {
-      id: 3,
-      title: 'Welcome to Shopery',
-      heading: 'Fresh & Healthy Organic Food',
-      saleText: 'Sale up to 30% OFF',
-      subtitle: 'Free shipping on all your order. we deliver, you enjoy',
-      image: VegetableBasket3,
-      isReversed: false,
-    },
-  ];
 
   // Auto-advance slides
   useEffect(() => {

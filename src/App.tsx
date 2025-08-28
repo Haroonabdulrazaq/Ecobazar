@@ -5,6 +5,11 @@ import Header from './components/Header';
 import Navigation from './components/Navigation';
 import Carousel from './components/Carousel';
 import FeaturedProducts from './components/FeaturedProducts';
+import TopCategory from './components/TopCategory';
+import NewProducts from './components/NewProducts';
+import Testimonial from './components/Testimonial';
+import Instagram from './components/Instagram';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -14,6 +19,11 @@ function App() {
       <Navigation />
       <Carousel />
       <FeaturedProducts />
+      <TopCategory />
+      <NewProducts />
+      <Testimonial />
+      <Instagram />
+      <Footer />
     </div>
   );
 }

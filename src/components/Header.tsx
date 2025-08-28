@@ -1,4 +1,3 @@
-import React from 'react';
 import { GoSearch, GoHeart } from 'react-icons/go';
 import { PiHandbagThin } from 'react-icons/pi';
 import plantLogo from '../assets/images/plant-logo.png';
