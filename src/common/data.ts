@@ -6,6 +6,7 @@ import {
   ISlide,
   ITopCategoryItem,
   ITestimonial,
+  IInstagram,
 } from './interface';
 
 import vegetables from '../assets/images/vegetable.png';
@@ -14,9 +15,14 @@ import soft_drinks from '../assets/images/soft-drink.png';
 import meat from '../assets/images/meat.png';
 import snacks from '../assets/images/snacks.png';
 import fish from '../assets/images/fish.png';
-import banner1 from '../assets/images/banner-1.png';
-import banner2 from '../assets/images/banner-2.png';
-import banner3 from '../assets/images/banner-3.png';
+
+import instagramPost1 from '../assets/images/instagram-post-1.png';
+import instagramPost2 from '../assets/images/instagram-post-2.png';
+import instagramPost3 from '../assets/images/instagram-post-3.png';
+import instagramPost4 from '../assets/images/instagram-post-4.png';
+import instagramPost5 from '../assets/images/instagram-post-5.png';
+import instagramPost6 from '../assets/images/instagram-post-6.png';
+
 // Import images
 import appleImg from '../assets/images/apple.png';
 import chineseCabbageImg from '../assets/images/chinese-cabbage.png';
@@ -280,5 +286,38 @@ export const testimonialData: ITestimonial[] = [
     comment:
       "Honestly one of the best investments we've made. The product keeps getting better with each update.",
     role: 'Marketing Director',
+  },
+];
+
+export const instagramData: IInstagram[] = [
+  {
+    id: 1,
+    image: instagramPost1,
+    title: 'Fresh tomatoes',
+  },
+  {
+    id: 2,
+    image: instagramPost2,
+    title: 'Fresh leaves',
+  },
+  {
+    id: 3,
+    image: instagramPost3,
+    title: 'Green tomatoes',
+  },
+  {
+    id: 4,
+    image: instagramPost4,
+    title: 'Bell papper',
+  },
+  {
+    id: 5,
+    image: instagramPost5,
+    title: 'Coconut',
+  },
+  {
+    id: 6,
+    image: instagramPost6,
+    title: 'ingredients',
   },
 ];

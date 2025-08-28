@@ -8,6 +8,7 @@ import FeaturedProducts from './components/FeaturedProducts';
 import TopCategory from './components/TopCategory';
 import NewProducts from './components/NewProducts';
 import Testimonial from './components/Testimonial';
+import Instagram from './components/Instagram';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <TopCategory />
       <NewProducts />
       <Testimonial />
+      <Instagram />
     </div>
   );
 }

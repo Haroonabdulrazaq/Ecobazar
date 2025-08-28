@@ -63,7 +63,7 @@ const Testimonial: React.FC = () => {
   const currentTestimonial = testimonialData[currentIndex];
 
   return (
-    <div className='testimonial'>
+    <div className='testimonial global-padding'>
       <div className='testimonial__container'>
         <div className='testimonial__header'>
           <div className='testimonial__header-left'>

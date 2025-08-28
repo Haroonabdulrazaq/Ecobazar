@@ -69,3 +69,8 @@ export interface ITestimonial {
   comment: string;
   role: string;
 }
+export interface IInstagram {
+  id: number;
+  image: string;
+  title: string;
+}
