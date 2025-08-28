@@ -9,66 +9,9 @@ import banner1 from '../assets/images/banner-1.png';
 import banner2 from '../assets/images/banner-2.png';
 import banner3 from '../assets/images/banner-3.png';
 import { FaArrowRight, FaArrowLeft } from 'react-icons/fa6';
+import { topCategoryItems } from '../common/data';
 
 import '../assets/stylesheets/top-category.scss';
-
-interface ITopCategoryItem {
-  id: number;
-  name: string;
-  image: string;
-  count: number;
-}
-
-const topCategoryItems: ITopCategoryItem[] = [
-  {
-    id: 1,
-    name: 'Vegetables',
-    image: vegetables,
-    count: 165,
-  },
-  {
-    id: 2,
-    name: 'Fresh Fruits',
-    image: fruits,
-    count: 137,
-  },
-  {
-    id: 3,
-    name: 'River Fish',
-    image: fish,
-    count: 34,
-  },
-  {
-    id: 4,
-    name: 'Meat',
-    image: meat,
-    count: 561,
-  },
-  {
-    id: 5,
-    name: 'Water & Drink',
-    image: soft_drinks,
-    count: 48,
-  },
-  {
-    id: 6,
-    name: 'Snacks',
-    image: snacks,
-    count: 651,
-  },
-  {
-    id: 7,
-    name: 'Dairy',
-    image: soft_drinks,
-    count: 63,
-  },
-  {
-    id: 8,
-    name: 'Beverages',
-    image: snacks,
-    count: 24,
-  },
-];
 
 const TopCategory = () => {
   const [currentIndex, setCurrentIndex] = useState(0);

@@ -53,3 +53,19 @@ export interface IPerk {
   subtitle: string;
   Icon: React.ReactNode;
 }
+
+export interface ITopCategoryItem {
+  id: number;
+  name: string;
+  image: string;
+  count: number;
+}
+
+export interface ITestimonial {
+  id: number;
+  name: string;
+  image: string;
+  rating: number;
+  comment: string;
+  role: string;
+}

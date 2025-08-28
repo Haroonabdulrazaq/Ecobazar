@@ -4,6 +4,8 @@ import {
   IProduct,
   ITopRated,
   ISlide,
+  ITopCategoryItem,
+  ITestimonial,
 } from './interface';
 
 import vegetables from '../assets/images/vegetable.png';
@@ -29,6 +31,9 @@ import FreshCauliflowerImg from '../assets/images/fresh-cauliflower.png';
 import VegetableBasket1 from '../assets/images/vegetable-basket-1.png';
 import VegetableBasket2 from '../assets/images/vegetable-basket-2.png';
 import VegetableBasket3 from '../assets/images/vegetable-basket-3.png';
+import robertFoxImg from '../assets/images/robert-fox.png';
+import danielleRussellImg from '../assets/images/danielle-russell.png';
+import eleanorPenaImg from '../assets/images/eleanor-pena.png';
 
 export const featuredProducts: IProduct[] = [
   {
@@ -168,5 +173,112 @@ export const slides: ISlide[] = [
     subtitle: 'Free shipping on all your order. we deliver, you enjoy',
     image: VegetableBasket3,
     isReversed: false,
+  },
+];
+export const topCategoryItems: ITopCategoryItem[] = [
+  {
+    id: 1,
+    name: 'Vegetables',
+    image: vegetables,
+    count: 165,
+  },
+  {
+    id: 2,
+    name: 'Fresh Fruits',
+    image: fruits,
+    count: 137,
+  },
+  {
+    id: 3,
+    name: 'River Fish',
+    image: fish,
+    count: 34,
+  },
+  {
+    id: 4,
+    name: 'Meat',
+    image: meat,
+    count: 561,
+  },
+  {
+    id: 5,
+    name: 'Water & Drink',
+    image: soft_drinks,
+    count: 48,
+  },
+  {
+    id: 6,
+    name: 'Snacks',
+    image: snacks,
+    count: 651,
+  },
+  {
+    id: 7,
+    name: 'Dairy',
+    image: soft_drinks,
+    count: 63,
+  },
+  {
+    id: 8,
+    name: 'Beverages',
+    image: snacks,
+    count: 24,
+  },
+];
+
+export const testimonialData: ITestimonial[] = [
+  {
+    id: 1,
+    name: 'Sarah Johnson',
+    image: robertFoxImg,
+    rating: 5,
+    comment:
+      'This platform has completely streamlined my workflow. The UI is intuitive and the support team is excellent!',
+    role: 'Product Manager',
+  },
+  {
+    id: 2,
+    name: 'David Kim',
+    image: danielleRussellImg,
+    rating: 4,
+    comment:
+      "Great experience overall! The features are exactly what our team needed, though I'd love to see more integrations.",
+    role: 'Software Engineer',
+  },
+  {
+    id: 3,
+    name: 'Emily Carter',
+    image: eleanorPenaImg,
+    rating: 5,
+    comment:
+      'I was impressed by how quickly I was able to get started. The documentation is clear and easy to follow.',
+    role: 'UX Designer',
+  },
+  {
+    id: 4,
+    name: 'Michael Rodriguez',
+    image: robertFoxImg,
+    rating: 5,
+    comment:
+      'The customer service has been fantastic. They really care about their users and it shows in the product.',
+    role: 'Startup Founder',
+  },
+  {
+    id: 5,
+    name: 'Olivia Brown',
+    image: danielleRussellImg,
+    rating: 4,
+    comment:
+      "A solid tool with powerful features. It has helped improve our team's efficiency by at least 30%.",
+    role: 'Operations Lead',
+  },
+  {
+    id: 6,
+    name: 'James Wilson',
+    image: eleanorPenaImg,
+    rating: 5,
+    comment:
+      "Honestly one of the best investments we've made. The product keeps getting better with each update.",
+    role: 'Marketing Director',
   },
 ];
