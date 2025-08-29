@@ -56,6 +56,7 @@ export const featuredProducts: IProduct[] = [
     price: 14.99,
     rating: 4.5,
     image: appleImg,
+    category: 'Fruits',
   },
   {
     id: 2,
@@ -63,6 +64,7 @@ export const featuredProducts: IProduct[] = [
     price: 4.99,
     rating: 4.7,
     image: chineseCabbageImg,
+    category: 'Vegetables',
   },
   {
     id: 3,
@@ -70,6 +72,7 @@ export const featuredProducts: IProduct[] = [
     price: 6.99,
     rating: 4,
     image: greenLettuceImg,
+    category: 'Vegetables',
   },
   {
     id: 4,
@@ -77,6 +80,7 @@ export const featuredProducts: IProduct[] = [
     price: 4.99,
     rating: 2.5,
     image: greenChillyImg,
+    category: 'Vegetables',
   },
   {
     id: 5,
@@ -84,6 +88,7 @@ export const featuredProducts: IProduct[] = [
     price: 3.99,
     rating: 4,
     image: cornImg,
+    category: 'Vegetables',
   },
   {
     id: 6,
@@ -91,6 +96,7 @@ export const featuredProducts: IProduct[] = [
     price: 2.99,
     rating: 5.0,
     image: greenChillyImg,
+    category: 'Vegetables',
   },
   {
     id: 7,
@@ -98,6 +104,7 @@ export const featuredProducts: IProduct[] = [
     price: 3.99,
     rating: 4,
     image: RedTomatoImg,
+    category: 'Vegetables',
   },
   {
     id: 8,
@@ -105,6 +112,7 @@ export const featuredProducts: IProduct[] = [
     price: 3.99,
     rating: 4,
     image: freshMangoImg,
+    category: 'Fruits',
   },
   {
     id: 9,
@@ -112,6 +120,7 @@ export const featuredProducts: IProduct[] = [
     price: 3.99,
     rating: 4,
     image: greenCucumberImg,
+    category: 'Vegetables',
   },
   {
     id: 10,
@@ -119,6 +128,7 @@ export const featuredProducts: IProduct[] = [
     price: 3.99,
     rating: 4,
     image: ladiesFingerImg,
+    category: 'Vegetables',
   },
   {
     id: 11,
@@ -126,6 +136,7 @@ export const featuredProducts: IProduct[] = [
     price: 3.99,
     rating: 4,
     image: redCasicumImg,
+    category: 'Vegetables',
   },
   {
     id: 12,
@@ -133,6 +144,7 @@ export const featuredProducts: IProduct[] = [
     price: 3.99,
     rating: 4,
     image: redChilliImg,
+    category: 'Vegetables',
   },
   {
     id: 13,
@@ -140,6 +152,7 @@ export const featuredProducts: IProduct[] = [
     price: 3.99,
     rating: 4,
     image: redTomatoes1Img,
+    category: 'Vegetables',
   },
   {
     id: 14,
@@ -147,6 +160,7 @@ export const featuredProducts: IProduct[] = [
     price: 3.99,
     rating: 4,
     image: OkraImg,
+    category: 'Vegetables',
   },
 ];
 
@@ -157,6 +171,7 @@ export const hotDeals: IHotdeal[] = [
     price: 14.99,
     rating: 4.5,
     image: appleImg,
+    category: 'Fruits',
   },
   {
     id: 2,
@@ -164,6 +179,7 @@ export const hotDeals: IHotdeal[] = [
     price: 14.99,
     rating: 4.5,
     image: appleImg,
+    category: 'Fruits',
   },
   {
     id: 3,
@@ -171,6 +187,7 @@ export const hotDeals: IHotdeal[] = [
     price: 6.99,
     rating: 4,
     image: greenLettuceImg,
+    category: 'Vegetables',
   },
 ];
 
@@ -181,6 +198,7 @@ export const bestSellersData: IBestSeller[] = [
     price: 14.99,
     rating: 4.5,
     image: EggplantImg,
+    category: 'Vegetables',
   },
 
   {
@@ -189,6 +207,7 @@ export const bestSellersData: IBestSeller[] = [
     price: 3.99,
     rating: 4.1,
     image: OkraImg,
+    category: 'Vegetables',
   },
   {
     id: 3,
@@ -196,6 +215,7 @@ export const bestSellersData: IBestSeller[] = [
     price: 14.99,
     rating: 4.5,
     image: RedTomatoImg,
+    category: 'Vegetables',
   },
 ];
 
@@ -206,6 +226,7 @@ export const topRatedData: ITopRated[] = [
     price: 14.99,
     rating: 4.5,
     image: BigPotatoImg,
+    category: 'Vegetables',
   },
   {
     id: 2,
@@ -213,6 +234,7 @@ export const topRatedData: ITopRated[] = [
     price: 14.99,
     rating: 4.5,
     image: FreshCauliflowerImg,
+    category: 'Vegetables',
   },
   {
     id: 3,
@@ -220,6 +242,7 @@ export const topRatedData: ITopRated[] = [
     price: 3.99,
     rating: 4,
     image: cornImg,
+    category: 'Vegetables',
   },
 ];
 
@@ -428,5 +451,46 @@ export const PriceRange: IPriceRange[] = [
   {
     id: 5,
     priceRange: '200-250',
+  },
+];
+
+// Comprehensive product list for ProductLists component
+export const allProducts: IProduct[] = [
+  ...featuredProducts,
+  ...hotDeals,
+  ...bestSellersData,
+  ...topRatedData,
+  // Add more products to make pagination meaningful
+  {
+    id: 15,
+    name: 'Big Potatoes',
+    price: 14.99,
+    rating: 4.5,
+    image: BigPotatoImg,
+    category: 'Vegetables',
+  },
+  {
+    id: 16,
+    name: 'Fresh Cauliflower',
+    price: 14.99,
+    rating: 4.5,
+    image: FreshCauliflowerImg,
+    category: 'Vegetables',
+  },
+  {
+    id: 17,
+    name: 'Egg plant',
+    price: 14.99,
+    rating: 4.5,
+    image: EggplantImg,
+    category: 'Vegetables',
+  },
+  {
+    id: 18,
+    name: 'Indian Malta',
+    price: 14.99,
+    rating: 4.5,
+    image: appleImg,
+    category: 'Fruits',
   },
 ];
