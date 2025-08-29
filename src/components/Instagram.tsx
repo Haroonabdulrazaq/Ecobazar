@@ -1,5 +1,4 @@
 import { instagramData } from '../common/data';
-import igIcons from '../assets/images/ig-icons.png';
 import '../assets/stylesheets/instagram.scss';
 import { SlSocialInstagram } from 'react-icons/sl';
 

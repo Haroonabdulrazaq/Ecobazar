@@ -1,29 +1,16 @@
 import React from 'react';
 import './App.scss';
-import TopBar from './components/TopBar';
-import Header from './components/Header';
-import Navigation from './components/Navigation';
-import Carousel from './components/Carousel';
-import FeaturedProducts from './components/FeaturedProducts';
-import TopCategory from './components/TopCategory';
-import NewProducts from './components/NewProducts';
-import Testimonial from './components/Testimonial';
-import Instagram from './components/Instagram';
-import Footer from './components/Footer';
+import Home from './pages/Home';
+import { Routes, Route } from 'react-router-dom';
+import Products from './pages/Products';
 
 function App() {
   return (
     <div className='App'>
-      <TopBar />
-      <Header />
-      <Navigation />
-      <Carousel />
-      <FeaturedProducts />
-      <TopCategory />
-      <NewProducts />
-      <Testimonial />
-      <Instagram />
-      <Footer />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/products' element={<Products />} />
+      </Routes>
     </div>
   );
 }

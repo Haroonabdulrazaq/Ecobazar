@@ -60,8 +60,6 @@ const Testimonial: React.FC = () => {
     return stars;
   };
 
-  const currentTestimonial = testimonialData[currentIndex];
-
   return (
     <div className='testimonial global-padding'>
       <div className='testimonial__container'>

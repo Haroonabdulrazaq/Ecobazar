@@ -74,3 +74,13 @@ export interface IInstagram {
   image: string;
   title: string;
 }
+
+export interface IProductCategory {
+  id: number;
+  name: string;
+}
+
+export interface IPriceRange {
+  id: number;
+  priceRange: string;
+}

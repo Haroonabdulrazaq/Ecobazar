@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { FaPhoneVolume, FaChevronDown, FaBars, FaXmark } from 'react-icons/fa6';
 import '../assets/stylesheets/Navigation.scss';
+import { Link } from 'react-router-dom';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -52,11 +53,15 @@ const Navigation = () => {
       <div className='navigation__container global-padding global-y-padding'>
         <div className='navigation__menu'>
           <div className='navigation__item'>
-            <span>Home</span>
+            <span>
+              <Link to='/'>Home</Link>
+            </span>
             <FaChevronDown className='navigation__caret' />
           </div>
           <div className='navigation__item'>
-            <span>Shop</span>
+            <span>
+              <Link to='/products'>Products</Link>
+            </span>
             <FaChevronDown className='navigation__caret' />
           </div>
           <div className='navigation__item'>

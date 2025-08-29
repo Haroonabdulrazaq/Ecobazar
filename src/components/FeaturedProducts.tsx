@@ -50,7 +50,7 @@ const FeaturedProducts = () => {
         </div>
 
         <div className='featured-products__grid'>
-          {featuredProducts.map(product => (
+          {featuredProducts.slice(0, 6).map(product => (
             <div
               key={product.id}
               className={`product-card ${hoveredProduct === product.id ? 'hovered' : ''}`}

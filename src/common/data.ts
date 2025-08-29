@@ -7,6 +7,8 @@ import {
   ITopCategoryItem,
   ITestimonial,
   IInstagram,
+  IProductCategory,
+  IPriceRange,
 } from './interface';
 
 import vegetables from '../assets/images/vegetable.png';
@@ -40,6 +42,12 @@ import VegetableBasket3 from '../assets/images/vegetable-basket-3.png';
 import robertFoxImg from '../assets/images/robert-fox.png';
 import danielleRussellImg from '../assets/images/danielle-russell.png';
 import eleanorPenaImg from '../assets/images/eleanor-pena.png';
+import freshMangoImg from '../assets/images/fresh-mango.png';
+import greenCucumberImg from '../assets/images/green-cucumber.png';
+import ladiesFingerImg from '../assets/images/ladies-finger.png';
+import redCasicumImg from '../assets/images/red-capsicum.png';
+import redChilliImg from '../assets/images/red-chilli.png';
+import redTomatoes1Img from '../assets/images/red-tomatoes-1.png';
 
 export const featuredProducts: IProduct[] = [
   {
@@ -76,6 +84,69 @@ export const featuredProducts: IProduct[] = [
     price: 3.99,
     rating: 4,
     image: cornImg,
+  },
+  {
+    id: 6,
+    name: 'Red Chilli',
+    price: 2.99,
+    rating: 5.0,
+    image: greenChillyImg,
+  },
+  {
+    id: 7,
+    name: 'Red Tomatoes',
+    price: 3.99,
+    rating: 4,
+    image: RedTomatoImg,
+  },
+  {
+    id: 8,
+    name: 'Fresh Mango',
+    price: 3.99,
+    rating: 4,
+    image: freshMangoImg,
+  },
+  {
+    id: 9,
+    name: 'Green Cucumber',
+    price: 3.99,
+    rating: 4,
+    image: greenCucumberImg,
+  },
+  {
+    id: 10,
+    name: 'Ladies Finger',
+    price: 3.99,
+    rating: 4,
+    image: ladiesFingerImg,
+  },
+  {
+    id: 11,
+    name: 'Red Capsicum',
+    price: 3.99,
+    rating: 4,
+    image: redCasicumImg,
+  },
+  {
+    id: 12,
+    name: 'Red Chilli',
+    price: 3.99,
+    rating: 4,
+    image: redChilliImg,
+  },
+  {
+    id: 13,
+    name: 'Red Tomatoes',
+    price: 3.99,
+    rating: 4,
+    image: redTomatoes1Img,
+  },
+  {
+    id: 14,
+    name: 'Green Okro',
+    price: 3.99,
+    rating: 4,
+    image: OkraImg,
   },
 ];
 
@@ -319,5 +390,43 @@ export const instagramData: IInstagram[] = [
     id: 6,
     image: instagramPost6,
     title: 'ingredients',
+  },
+];
+
+export const ProductCategory: IProductCategory[] = [
+  {
+    id: 1,
+    name: 'Vegetables',
+  },
+  {
+    id: 2,
+    name: 'Fruits',
+  },
+  {
+    id: 3,
+    name: 'Meat',
+  },
+];
+
+export const PriceRange: IPriceRange[] = [
+  {
+    id: 1,
+    priceRange: '0-50',
+  },
+  {
+    id: 2,
+    priceRange: '50-100',
+  },
+  {
+    id: 3,
+    priceRange: '100-150',
+  },
+  {
+    id: 4,
+    priceRange: '150-200',
+  },
+  {
+    id: 5,
+    priceRange: '200-250',
   },
 ];
