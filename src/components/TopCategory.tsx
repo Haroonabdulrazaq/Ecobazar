@@ -1,10 +1,4 @@
 import React, { useState, useRef, useEffect } from 'react';
-import vegetables from '../assets/images/vegetable.png';
-import fruits from '../assets/images/fruits.png';
-import soft_drinks from '../assets/images/soft-drink.png';
-import meat from '../assets/images/meat.png';
-import snacks from '../assets/images/snacks.png';
-import fish from '../assets/images/fish.png';
 import banner1 from '../assets/images/banner-1.png';
 import banner2 from '../assets/images/banner-2.png';
 import banner3 from '../assets/images/banner-3.png';
@@ -44,14 +38,11 @@ const TopCategory = () => {
     if (item && container) {
       const containerWidth = container.offsetWidth;
       const itemWidth = item.offsetWidth;
-      const gap = 24; // 1.5rem gap between items
-      const itemsPerView = 4; // Show 4 items on large screens
+      const gap = 24;
 
-      // Calculate the position to center the item
       const itemPosition = index * (itemWidth + gap);
       const centerPosition = itemPosition - containerWidth / 2 + itemWidth / 2;
 
-      // Ensure we don't scroll past the beginning
       const scrollLeft = Math.max(0, centerPosition);
 
       container.scrollTo({

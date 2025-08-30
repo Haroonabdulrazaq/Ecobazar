@@ -49,7 +49,7 @@ const NewProducts = () => {
           </div>
         </div>
         <div className='new-products__grid'>
-          {featuredProducts.map(product => (
+          {featuredProducts.slice(0, 6).map(product => (
             <div
               key={product.id}
               className={`product-card ${hoveredProduct === product.id ? 'hovered' : ''}`}

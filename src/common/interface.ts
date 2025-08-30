@@ -11,6 +11,7 @@ export interface IProduct {
   image: string;
   price: number;
   rating: number;
+  category?: string;
 }
 
 export interface IHotdeal {
@@ -19,6 +20,7 @@ export interface IHotdeal {
   image: string;
   price: number;
   rating: number;
+  category?: string;
 }
 
 export interface IBestSeller {
@@ -27,6 +29,7 @@ export interface IBestSeller {
   image: string;
   price: number;
   rating: number;
+  category?: string;
 }
 
 export interface ITopRated {
@@ -35,6 +38,7 @@ export interface ITopRated {
   image: string;
   price: number;
   rating: number;
+  category?: string;
 }
 
 export interface ISlide {
@@ -73,4 +77,14 @@ export interface IInstagram {
   id: number;
   image: string;
   title: string;
+}
+
+export interface IProductCategory {
+  id: number;
+  name: string;
+}
+
+export interface IPriceRange {
+  id: number;
+  priceRange: string;
 }

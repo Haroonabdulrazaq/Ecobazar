@@ -1,10 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { FaPhoneVolume, FaChevronDown, FaBars, FaXmark } from 'react-icons/fa6';
 import '../assets/stylesheets/Navigation.scss';
+import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
 
   const openMenu = () => {
     setIsMenuOpen(true);
@@ -12,6 +15,11 @@ const Navigation = () => {
 
   const closeMenu = () => {
     setIsMenuOpen(false);
+  };
+
+  const handleNavigate = (path: string) => {
+    navigate(path);
+    closeMenu();
   };
 
   // Handle click outside to close menu
@@ -52,11 +60,15 @@ const Navigation = () => {
       <div className='navigation__container global-padding global-y-padding'>
         <div className='navigation__menu'>
           <div className='navigation__item'>
-            <span>Home</span>
+            <span>
+              <Link to='/'>Home</Link>
+            </span>
             <FaChevronDown className='navigation__caret' />
           </div>
           <div className='navigation__item'>
-            <span>Shop</span>
+            <span>
+              <Link to='/products'>Products</Link>
+            </span>
             <FaChevronDown className='navigation__caret' />
           </div>
           <div className='navigation__item'>
@@ -102,26 +114,46 @@ const Navigation = () => {
           >
             {<FaXmark />}
           </button>
-          <div className='navigation__mobile-item'>
+          <div
+            className='navigation__mobile-item'
+            onClick={() => handleNavigate('/')}
+          >
             <span>Home</span>
             <FaChevronDown className='navigation__mobile-caret' />
           </div>
-          <div className='navigation__mobile-item'>
-            <span>Shop</span>
+          <div
+            className='navigation__mobile-item'
+            onClick={() => handleNavigate('/products')}
+          >
+            <span>
+              <Link to='/products'>Products</Link>
+            </span>
             <FaChevronDown className='navigation__mobile-caret' />
           </div>
-          <div className='navigation__mobile-item'>
+          <div
+            className='navigation__mobile-item'
+            onClick={() => handleNavigate('/pages')}
+          >
             <span>Pages</span>
             <FaChevronDown className='navigation__mobile-caret' />
           </div>
-          <div className='navigation__mobile-item'>
+          <div
+            className='navigation__mobile-item'
+            onClick={() => handleNavigate('/blog')}
+          >
             <span>Blog</span>
             <FaChevronDown className='navigation__mobile-caret' />
           </div>
-          <div className='navigation__mobile-item'>
+          <div
+            className='navigation__mobile-item'
+            onClick={() => handleNavigate('/about-us')}
+          >
             <span>About Us</span>
           </div>
-          <div className='navigation__mobile-item'>
+          <div
+            className='navigation__mobile-item'
+            onClick={() => handleNavigate('/contact-us')}
+          >
             <span>Contact Us</span>
           </div>
           <div className='navigation__mobile-contact'>

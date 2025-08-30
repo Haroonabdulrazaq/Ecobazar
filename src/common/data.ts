@@ -7,6 +7,8 @@ import {
   ITopCategoryItem,
   ITestimonial,
   IInstagram,
+  IProductCategory,
+  IPriceRange,
 } from './interface';
 
 import vegetables from '../assets/images/vegetable.png';
@@ -40,6 +42,12 @@ import VegetableBasket3 from '../assets/images/vegetable-basket-3.png';
 import robertFoxImg from '../assets/images/robert-fox.png';
 import danielleRussellImg from '../assets/images/danielle-russell.png';
 import eleanorPenaImg from '../assets/images/eleanor-pena.png';
+import freshMangoImg from '../assets/images/fresh-mango.png';
+import greenCucumberImg from '../assets/images/green-cucumber.png';
+import ladiesFingerImg from '../assets/images/ladies-finger.png';
+import redCasicumImg from '../assets/images/red-capsicum.png';
+import redChilliImg from '../assets/images/red-chilli.png';
+import redTomatoes1Img from '../assets/images/red-tomatoes-1.png';
 
 export const featuredProducts: IProduct[] = [
   {
@@ -48,6 +56,7 @@ export const featuredProducts: IProduct[] = [
     price: 14.99,
     rating: 4.5,
     image: appleImg,
+    category: 'Fruits',
   },
   {
     id: 2,
@@ -55,6 +64,7 @@ export const featuredProducts: IProduct[] = [
     price: 4.99,
     rating: 4.7,
     image: chineseCabbageImg,
+    category: 'Vegetables',
   },
   {
     id: 3,
@@ -62,6 +72,7 @@ export const featuredProducts: IProduct[] = [
     price: 6.99,
     rating: 4,
     image: greenLettuceImg,
+    category: 'Vegetables',
   },
   {
     id: 4,
@@ -69,6 +80,7 @@ export const featuredProducts: IProduct[] = [
     price: 4.99,
     rating: 2.5,
     image: greenChillyImg,
+    category: 'Vegetables',
   },
   {
     id: 5,
@@ -76,6 +88,79 @@ export const featuredProducts: IProduct[] = [
     price: 3.99,
     rating: 4,
     image: cornImg,
+    category: 'Vegetables',
+  },
+  {
+    id: 6,
+    name: 'Red Chilli',
+    price: 2.99,
+    rating: 5.0,
+    image: greenChillyImg,
+    category: 'Vegetables',
+  },
+  {
+    id: 7,
+    name: 'Red Tomatoes',
+    price: 3.99,
+    rating: 4,
+    image: RedTomatoImg,
+    category: 'Vegetables',
+  },
+  {
+    id: 8,
+    name: 'Fresh Mango',
+    price: 3.99,
+    rating: 4,
+    image: freshMangoImg,
+    category: 'Fruits',
+  },
+  {
+    id: 9,
+    name: 'Green Cucumber',
+    price: 3.99,
+    rating: 4,
+    image: greenCucumberImg,
+    category: 'Vegetables',
+  },
+  {
+    id: 10,
+    name: 'Ladies Finger',
+    price: 3.99,
+    rating: 4,
+    image: ladiesFingerImg,
+    category: 'Vegetables',
+  },
+  {
+    id: 11,
+    name: 'Red Capsicum',
+    price: 3.99,
+    rating: 4,
+    image: redCasicumImg,
+    category: 'Vegetables',
+  },
+  {
+    id: 12,
+    name: 'Red Chilli',
+    price: 3.99,
+    rating: 4,
+    image: redChilliImg,
+    category: 'Vegetables',
+  },
+  {
+    id: 13,
+    name: 'Red Tomatoes',
+    price: 3.99,
+    rating: 4,
+    image: redTomatoes1Img,
+    category: 'Vegetables',
+  },
+  {
+    id: 14,
+    name: 'Green Okro',
+    price: 3.99,
+    rating: 4,
+    image: OkraImg,
+    category: 'Vegetables',
   },
 ];
 
@@ -86,6 +171,7 @@ export const hotDeals: IHotdeal[] = [
     price: 14.99,
     rating: 4.5,
     image: appleImg,
+    category: 'Fruits',
   },
   {
     id: 2,
@@ -93,6 +179,7 @@ export const hotDeals: IHotdeal[] = [
     price: 14.99,
     rating: 4.5,
     image: appleImg,
+    category: 'Fruits',
   },
   {
     id: 3,
@@ -100,6 +187,7 @@ export const hotDeals: IHotdeal[] = [
     price: 6.99,
     rating: 4,
     image: greenLettuceImg,
+    category: 'Vegetables',
   },
 ];
 
@@ -110,6 +198,7 @@ export const bestSellersData: IBestSeller[] = [
     price: 14.99,
     rating: 4.5,
     image: EggplantImg,
+    category: 'Vegetables',
   },
 
   {
@@ -118,6 +207,7 @@ export const bestSellersData: IBestSeller[] = [
     price: 3.99,
     rating: 4.1,
     image: OkraImg,
+    category: 'Vegetables',
   },
   {
     id: 3,
@@ -125,6 +215,7 @@ export const bestSellersData: IBestSeller[] = [
     price: 14.99,
     rating: 4.5,
     image: RedTomatoImg,
+    category: 'Vegetables',
   },
 ];
 
@@ -135,6 +226,7 @@ export const topRatedData: ITopRated[] = [
     price: 14.99,
     rating: 4.5,
     image: BigPotatoImg,
+    category: 'Vegetables',
   },
   {
     id: 2,
@@ -142,6 +234,7 @@ export const topRatedData: ITopRated[] = [
     price: 14.99,
     rating: 4.5,
     image: FreshCauliflowerImg,
+    category: 'Vegetables',
   },
   {
     id: 3,
@@ -149,6 +242,7 @@ export const topRatedData: ITopRated[] = [
     price: 3.99,
     rating: 4,
     image: cornImg,
+    category: 'Vegetables',
   },
 ];
 
@@ -319,5 +413,83 @@ export const instagramData: IInstagram[] = [
     id: 6,
     image: instagramPost6,
     title: 'ingredients',
+  },
+];
+
+export const ProductCategory: IProductCategory[] = [
+  {
+    id: 1,
+    name: 'Vegetables',
+  },
+  {
+    id: 2,
+    name: 'Fruits',
+  },
+  {
+    id: 3,
+    name: 'Meat',
+  },
+];
+
+export const PriceRange: IPriceRange[] = [
+  {
+    id: 1,
+    priceRange: '0-50',
+  },
+  {
+    id: 2,
+    priceRange: '50-100',
+  },
+  {
+    id: 3,
+    priceRange: '100-150',
+  },
+  {
+    id: 4,
+    priceRange: '150-200',
+  },
+  {
+    id: 5,
+    priceRange: '200-250',
+  },
+];
+
+export const allProducts: IProduct[] = [
+  ...featuredProducts,
+  ...hotDeals,
+  ...bestSellersData,
+  ...topRatedData,
+
+  {
+    id: 15,
+    name: 'Big Potatoes',
+    price: 14.99,
+    rating: 4.5,
+    image: BigPotatoImg,
+    category: 'Vegetables',
+  },
+  {
+    id: 16,
+    name: 'Fresh Cauliflower',
+    price: 14.99,
+    rating: 4.5,
+    image: FreshCauliflowerImg,
+    category: 'Vegetables',
+  },
+  {
+    id: 17,
+    name: 'Egg plant',
+    price: 14.99,
+    rating: 4.5,
+    image: EggplantImg,
+    category: 'Vegetables',
+  },
+  {
+    id: 18,
+    name: 'Indian Malta',
+    price: 14.99,
+    rating: 4.5,
+    image: appleImg,
+    category: 'Fruits',
   },
 ];
