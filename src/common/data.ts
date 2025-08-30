@@ -454,13 +454,12 @@ export const PriceRange: IPriceRange[] = [
   },
 ];
 
-// Comprehensive product list for ProductLists component
 export const allProducts: IProduct[] = [
   ...featuredProducts,
   ...hotDeals,
   ...bestSellersData,
   ...topRatedData,
-  // Add more products to make pagination meaningful
+
   {
     id: 15,
     name: 'Big Potatoes',

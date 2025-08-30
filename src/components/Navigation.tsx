@@ -1,11 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { FaPhoneVolume, FaChevronDown, FaBars, FaXmark } from 'react-icons/fa6';
 import '../assets/stylesheets/Navigation.scss';
+import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
 
   const openMenu = () => {
     setIsMenuOpen(true);
@@ -13,6 +15,11 @@ const Navigation = () => {
 
   const closeMenu = () => {
     setIsMenuOpen(false);
+  };
+
+  const handleNavigate = (path: string) => {
+    navigate(path);
+    closeMenu();
   };
 
   // Handle click outside to close menu
@@ -111,8 +118,13 @@ const Navigation = () => {
             <span>Home</span>
             <FaChevronDown className='navigation__mobile-caret' />
           </div>
-          <div className='navigation__mobile-item'>
-            <span>Shop</span>
+          <div
+            className='navigation__mobile-item'
+            onClick={() => handleNavigate('/products')}
+          >
+            <span>
+              <Link to='/products'>Products</Link>
+            </span>
             <FaChevronDown className='navigation__mobile-caret' />
           </div>
           <div className='navigation__mobile-item'>

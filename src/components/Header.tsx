@@ -4,6 +4,7 @@ import plantLogo from '../assets/images/plant-logo.png';
 import { useSelector } from 'react-redux';
 import { RootState } from '../state/store';
 import '../assets/stylesheets/Header.scss';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const cartItems = useSelector((state: RootState) => state.cart.items);
@@ -53,14 +54,14 @@ const Header = () => {
           </div>
           <span className='header__cart-divider'>|</span>
           <div className='header__cart-item'>
-            <div className='relative'>
+            <Link to='/shopping-cart' className='relative'>
               <PiHandbagThin size={25} />
               {cartItemCount > 0 && (
                 <span className='absolute -top-1 -right-1 bg-green-700 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-semibold'>
                   {cartItemCount}
                 </span>
               )}
-            </div>
+            </Link>
             <div className='header__cart-icon-container'>
               <span className='header__cart-text'>shopping cart:</span>
               <span className='header__cart-price'>${cartItemTotalPrice}</span>

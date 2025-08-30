@@ -5,7 +5,6 @@ import FeaturedProducts from '../components/FeaturedProducts';
 import NewProducts from '../components/NewProducts';
 import Testimonial from '../components/Testimonial';
 import Instagram from '../components/Instagram';
-import Footer from '../components/Footer';
 
 const Home = () => {
   return (
@@ -16,7 +15,6 @@ const Home = () => {
       <NewProducts />
       <Testimonial />
       <Instagram />
-      <Footer />
     </>
   );
 };
