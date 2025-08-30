@@ -114,7 +114,10 @@ const Navigation = () => {
           >
             {<FaXmark />}
           </button>
-          <div className='navigation__mobile-item'>
+          <div
+            className='navigation__mobile-item'
+            onClick={() => handleNavigate('/')}
+          >
             <span>Home</span>
             <FaChevronDown className='navigation__mobile-caret' />
           </div>
@@ -127,18 +130,30 @@ const Navigation = () => {
             </span>
             <FaChevronDown className='navigation__mobile-caret' />
           </div>
-          <div className='navigation__mobile-item'>
+          <div
+            className='navigation__mobile-item'
+            onClick={() => handleNavigate('/pages')}
+          >
             <span>Pages</span>
             <FaChevronDown className='navigation__mobile-caret' />
           </div>
-          <div className='navigation__mobile-item'>
+          <div
+            className='navigation__mobile-item'
+            onClick={() => handleNavigate('/blog')}
+          >
             <span>Blog</span>
             <FaChevronDown className='navigation__mobile-caret' />
           </div>
-          <div className='navigation__mobile-item'>
+          <div
+            className='navigation__mobile-item'
+            onClick={() => handleNavigate('/about-us')}
+          >
             <span>About Us</span>
           </div>
-          <div className='navigation__mobile-item'>
+          <div
+            className='navigation__mobile-item'
+            onClick={() => handleNavigate('/contact-us')}
+          >
             <span>Contact Us</span>
           </div>
           <div className='navigation__mobile-contact'>

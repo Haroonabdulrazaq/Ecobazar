@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { GoHeart } from 'react-icons/go';
 import { IoEyeOutline } from 'react-icons/io5';
 import { PiHandbagThin } from 'react-icons/pi';
@@ -26,6 +26,12 @@ const ProductLists = () => {
     productId: number;
     type: string;
   } | null>(null);
+  const [countdown, setCountdown] = useState({
+    days: 0,
+    hours: 2,
+    minutes: 18,
+    seconds: 46,
+  });
 
   const productsPerPage = selectedNumber;
 
@@ -71,6 +77,38 @@ const ProductLists = () => {
     setCurrentPage(1);
   }, [selectedCategory, selectedPriceRange, selectedRating]);
 
+  // Countdown timer effect
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCountdown(prev => {
+        let { days, hours, minutes, seconds } = prev;
+
+        if (seconds > 0) {
+          seconds--;
+        } else {
+          seconds = 59;
+          if (minutes > 0) {
+            minutes--;
+          } else {
+            minutes = 59;
+            if (hours > 0) {
+              hours--;
+            } else {
+              hours = 23;
+              if (days > 0) {
+                days--;
+              }
+            }
+          }
+        }
+
+        return { days, hours, minutes, seconds };
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
   const renderStars = (rating: number) => {
     const stars = [];
     for (let i = 1; i <= 5; i++) {
@@ -115,12 +153,46 @@ const ProductLists = () => {
             <Link to='/products'>Products</Link>
           </div>
           <div className='product-lists__header-image'>
-            <img
-              src={discountBannar}
-              alt='discount Bannar'
-              aria-label='discount Bannar'
-              className='product-lists__header-image-image'
-            />
+            <div className='product-lists__header-content'>
+              <h3 className='product-lists__header-subtitle'>BEST DEAL</h3>
+              <h2 className='product-lists__header-title'>Sale of the Month</h2>
+              <div className='product-lists__countdown-timer'>
+                <div className='product-lists__countdown-item'>
+                  <span className='product-lists__countdown-number'>
+                    {countdown.days.toString().padStart(2, '0')}
+                  </span>
+                  <span className='product-lists__countdown-label'>Days</span>
+                </div>
+                <span className='product-lists__countdown-separator'>:</span>
+                <div className='product-lists__countdown-item'>
+                  <span className='product-lists__countdown-number'>
+                    {countdown.hours.toString().padStart(2, '0')}
+                  </span>
+                  <span className='product-lists__countdown-label'>Hours</span>
+                </div>
+                <span className='product-lists__countdown-separator'>:</span>
+                <div className='product-lists__countdown-item'>
+                  <span className='product-lists__countdown-number'>
+                    {countdown.minutes.toString().padStart(2, '0')}
+                  </span>
+                  <span className='product-lists__countdown-label'>
+                    Minutes
+                  </span>
+                </div>
+                <span className='product-lists__countdown-separator'>:</span>
+                <div className='product-lists__countdown-item'>
+                  <span className='product-lists__countdown-number'>
+                    {countdown.seconds.toString().padStart(2, '0')}
+                  </span>
+                  <span className='product-lists__countdown-label'>
+                    Seconds
+                  </span>
+                </div>
+              </div>
+              <button className='product-lists__header-button'>
+                Shop Now →
+              </button>
+            </div>
           </div>
         </div>
 

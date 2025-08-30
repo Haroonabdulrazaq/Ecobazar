@@ -12,6 +12,11 @@
     padding-bottom: 2rem;
 
     @include responsive(tab) {
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+
+    @include responsive(desktop) {
       grid-template-columns: 1fr 1fr 1fr;
     }
 
