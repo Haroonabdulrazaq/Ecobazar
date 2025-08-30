@@ -19,6 +19,25 @@ body {
   box-sizing: border-box;
 }
 
+.App {
+  min-height: 100vh;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.main-content {
+  flex: 1;
+}
+
 .app {
   min-height: 100vh;
   height: auto;

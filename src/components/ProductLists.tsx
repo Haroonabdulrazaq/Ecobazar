@@ -9,10 +9,14 @@ import { RxCaretRight } from 'react-icons/rx';
 import { Link } from 'react-router-dom';
 import discountBannar from '../assets/images/discount-bannar.png';
 import { CiCircleRemove } from 'react-icons/ci';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../state/features/cart/cartSlice';
 import '../assets/stylesheets/product-lists.scss';
+import { IProduct } from '../common/interface';
 
 const ProductLists = () => {
   const [currentPage, setCurrentPage] = useState(1);
+  const dispatch = useDispatch();
   const [selectedCategory, setSelectedCategory] = useState<string>('');
   const [selectedPriceRange, setSelectedPriceRange] = useState<string>('');
   const [selectedRating, setSelectedRating] = useState<string>('');
@@ -83,6 +87,10 @@ const ProductLists = () => {
   const handleIconClick = (productId: number, type: string) => {
     setShowTooltip({ productId, type });
     setTimeout(() => setShowTooltip(null), 2000);
+  };
+
+  const handleAddToCart = (product: IProduct) => {
+    dispatch(addToCart({ ...product, quantity: 1 }));
   };
 
   const handlePageChange = (page: number) => {
@@ -278,7 +286,7 @@ const ProductLists = () => {
                 <div className='product-card__actions'>
                   <button
                     className='product-card__cart-btn'
-                    onClick={() => handleIconClick(product.id, 'cart')}
+                    onClick={() => handleAddToCart(product)}
                   >
                     <PiHandbagThin size={20} />
                   </button>

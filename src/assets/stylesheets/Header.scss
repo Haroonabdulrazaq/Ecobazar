@@ -4,6 +4,7 @@
 .header {
   width: 100%;
   background: $white;
+  border-bottom: 1px solid $input-grey-outline;
 
   &__container {
     display: flex;
