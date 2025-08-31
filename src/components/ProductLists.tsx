@@ -149,7 +149,7 @@ const ProductLists = () => {
               <IoHomeOutline />
             </Link>
             <RxCaretRight />
-            <Link to='/products'>Products</Link>
+            <Link to='/shop'>Shop</Link>
           </div>
           <div className='product-lists__header-image'>
             <div className='product-lists__header-content'>

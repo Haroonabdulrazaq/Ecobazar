@@ -21,7 +21,7 @@ function App() {
       <main className='main-content'>
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/products' element={<Products />} />
+          <Route path='/shop' element={<Products />} />
           <Route path='/shopping-cart' element={<Cart />} />
           <Route path='/checkout' element={<Checkout />} />
         </Routes>
