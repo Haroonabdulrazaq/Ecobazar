@@ -39,6 +39,7 @@ const BillingForm = () => {
     { setSubmitting, resetForm }: any
   ) => {
     setTimeout(() => {
+      // eslint-disable-next-line no-console
       console.log(values);
       setSubmitting(false);
       resetForm();
