@@ -71,18 +71,30 @@ const Navigation = () => {
             </span>
             <FaChevronDown className='navigation__caret' />
           </div>
-          <div className='navigation__item'>
+          <div
+            className='navigation__item'
+            onClick={() => handleNavigate('/pages')}
+          >
             <span>Pages</span>
             <FaChevronDown className='navigation__caret' />
           </div>
-          <div className='navigation__item'>
+          <div
+            className='navigation__item'
+            onClick={() => handleNavigate('/blog')}
+          >
             <span>Blog</span>
             <FaChevronDown className='navigation__caret' />
           </div>
-          <div className='navigation__item'>
+          <div
+            className='navigation__item'
+            onClick={() => handleNavigate('/about-us')}
+          >
             <span>About Us</span>
           </div>
-          <div className='navigation__item'>
+          <div
+            className='navigation__item'
+            onClick={() => handleNavigate('/contact-us')}
+          >
             <span>Contact Us</span>
           </div>
         </div>

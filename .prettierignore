@@ -9,6 +9,10 @@ build/
 dist/
 coverage/
 
+# TypeScript declaration files
+*.d.ts
+src/react-app-env.d.ts
+
 # Environment files
 .env
 .env.local

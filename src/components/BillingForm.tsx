@@ -3,7 +3,6 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useSelector } from 'react-redux';
 import validationSchema from '../common/validation';
 import { selectAllCartItems } from '../state/features/cart/cartSlice';
-import { PaymentMethod } from '../common/interface';
 import { RxCaretRight } from 'react-icons/rx';
 import { Link } from 'react-router-dom';
 import { IoHomeOutline } from 'react-icons/io5';
@@ -36,10 +35,12 @@ const BillingForm = () => {
   const total = subtotal;
 
   const handleSubmit = (values: BillingFormValues, { setSubmitting }: any) => {
-    // eslint-disable-next-line no-console
-    console.log(values);
+    setTimeout(() => {
+      // eslint-disable-next-line no-console
+      console.log(values);
+      setSubmitting(false);
+    }, 5000);
   };
-
   return (
     <div className='billing-form '>
       <div className='billing-form__header'>
@@ -261,7 +262,7 @@ const BillingForm = () => {
                   </div>
                   <div className='billing-form__field'>
                     <label htmlFor='phone' className='billing-form__label'>
-                      Phone <span className='text-red-300'>*</span>
+                      Phone
                     </label>
                     <Field
                       type='tel'
