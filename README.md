@@ -164,6 +164,58 @@ The project is hosted on Vercel. You can access the live site at [Ecobazar](http
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
+## CI/CD Pipeline 🚀
+
+This project uses GitHub Actions for continuous integration and deployment. The pipeline automatically runs on every push and pull request to the `main` and `development` branches.
+
+### What the Pipeline Does
+
+1. **Lint & Test**: Runs ESLint, Prettier checks, and unit tests
+2. **Build**: Creates a production build of the application
+3. **Deploy**: Automatically deploys to Vercel
+4. **Security**: Runs security audits on dependencies
+
+### Setting Up GitHub Actions
+
+#### 1. Create Required Secrets
+
+Go to your GitHub repository → Settings → Secrets and variables → Actions, and add these secrets:
+
+- `VERCEL_TOKEN`: Your Vercel API token
+- `VERCEL_ORG_ID`: Your Vercel organization ID
+- `VERCEL_PROJECT_ID`: Your Vercel project ID
+
+#### 2. Get Vercel Credentials
+
+```bash
+# Install Vercel CLI globally
+npm i -g vercel
+
+# Login to Vercel
+vercel login
+
+# Link your project (this will show your org and project IDs)
+vercel link
+```
+
+#### 3. Workflow Triggers
+
+- **Push to `development`**: Deploys preview version
+- **Push to `main`**: Deploys production version
+- **Pull Requests**: Runs tests and linting only
+
+### Manual Deployment
+
+If you prefer to deploy manually:
+
+```bash
+# Build the project
+npm run build
+
+# Deploy to Vercel
+vercel --prod
+```
+
 ## License 📄
 
 This project is licensed under the MIT License.
