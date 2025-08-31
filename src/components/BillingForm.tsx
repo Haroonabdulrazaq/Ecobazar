@@ -1,8 +1,11 @@
 import '../assets/stylesheets/billing-form.scss';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import validationSchema from '../common/validation';
-import { selectAllCartItems } from '../state/features/cart/cartSlice';
+import {
+  clearCart,
+  selectAllCartItems,
+} from '../state/features/cart/cartSlice';
 import { RxCaretRight } from 'react-icons/rx';
 import { Link } from 'react-router-dom';
 import { IoHomeOutline } from 'react-icons/io5';
@@ -10,6 +13,7 @@ import { BillingFormValues } from '../common/interface';
 
 const BillingForm = () => {
   const cartItems = useSelector(selectAllCartItems);
+  const dispatch = useDispatch();
 
   const initialValues: BillingFormValues = {
     firstName: '',
@@ -43,6 +47,7 @@ const BillingForm = () => {
       console.log(values);
       setSubmitting(false);
       resetForm();
+      dispatch(clearCart());
     }, 5000);
   };
   return (
