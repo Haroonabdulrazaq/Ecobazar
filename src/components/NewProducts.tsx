@@ -4,8 +4,12 @@ import { IoEyeOutline } from 'react-icons/io5';
 import { GoHeart } from 'react-icons/go';
 import { PiHandbagThin } from 'react-icons/pi';
 import { FaStar } from 'react-icons/fa';
+import { useDispatch } from 'react-redux';
 
 import '../assets/stylesheets/new-products.scss';
+import { Link } from 'react-router-dom';
+import { IProduct } from '../common/interface';
+import { addToCart } from '../state/features/cart/cartSlice';
 
 const NewProducts = () => {
   const [hoveredProduct, setHoveredProduct] = useState<number | null>(null);
@@ -13,6 +17,7 @@ const NewProducts = () => {
     productId: number;
     type: string;
   } | null>(null);
+  const dispatch = useDispatch();
 
   const renderStars = (rating: number) => {
     const stars = [];
@@ -32,6 +37,10 @@ const NewProducts = () => {
     setTimeout(() => setShowTooltip(null), 2000);
   };
 
+  const handleAddToCart = (product: IProduct) => {
+    dispatch(addToCart({ ...product, quantity: 1 }));
+  };
+
   return (
     <div className='new-products global-padding'>
       <div className='new-products__container'>
@@ -45,7 +54,7 @@ const NewProducts = () => {
             </div>
           </div>
           <div className='new-products__header-right'>
-            <button>View All →</button>
+            <Link to='/shop'>View All →</Link>
           </div>
         </div>
         <div className='new-products__grid'>
@@ -98,7 +107,7 @@ const NewProducts = () => {
                 <div className='product-card__actions'>
                   <button
                     className='product-card__cart-btn'
-                    onClick={() => handleIconClick(product.id, 'cart')}
+                    onClick={() => handleAddToCart(product)}
                   >
                     <PiHandbagThin size={20} />
                   </button>

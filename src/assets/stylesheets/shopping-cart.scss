@@ -147,10 +147,15 @@
       font-weight: 400;
       padding: 0.75rem 1.5rem;
       margin-top: 1rem;
+      text-align: center;
 
       @include responsive(tab) {
         font-size: 1.6rem;
       }
+    }
+    .disabled {
+      background: $mild-grey;
+      cursor: not-allowed;
     }
   }
 

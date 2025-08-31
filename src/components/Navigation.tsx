@@ -67,7 +67,7 @@ const Navigation = () => {
           </div>
           <div className='navigation__item'>
             <span>
-              <Link to='/products'>Products</Link>
+              <Link to='/shop'>Shop</Link>
             </span>
             <FaChevronDown className='navigation__caret' />
           </div>
@@ -123,10 +123,10 @@ const Navigation = () => {
           </div>
           <div
             className='navigation__mobile-item'
-            onClick={() => handleNavigate('/products')}
+            onClick={() => handleNavigate('/shop')}
           >
             <span>
-              <Link to='/products'>Products</Link>
+              <Link to='/shop'>Shop</Link>
             </span>
             <FaChevronDown className='navigation__mobile-caret' />
           </div>
