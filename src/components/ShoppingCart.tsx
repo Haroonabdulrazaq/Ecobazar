@@ -7,8 +7,10 @@ import { IoHomeOutline } from 'react-icons/io5';
 import { RxCaretRight } from 'react-icons/rx';
 import { CiCircleRemove } from 'react-icons/ci';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const ShoppingCart = () => {
+  const navigate = useNavigate();
   const cartItems = useSelector((state: RootState) => state.cart.items);
   const cartItemTotalPrice = useSelector((state: RootState) =>
     state.cart.items.reduce((acc, item) => acc + item.price * item.quantity, 0)
@@ -35,6 +37,7 @@ const ShoppingCart = () => {
       setProcessingCoupon(false);
       return;
     }
+    // eslint-disable-next-line no-console
     console.log(couponCode);
     setError('');
     setProcessingCoupon(false);
@@ -250,7 +253,7 @@ const ShoppingCart = () => {
                       Shipping:{' '}
                     </span>
                     <span className='shopping-cart__cart-total-item-value'>
-                      ${cartItemTotalPrice}
+                      Free
                     </span>
                   </div>
                   <div className='shopping-cart__cart-total-item'>
@@ -261,7 +264,11 @@ const ShoppingCart = () => {
                       ${cartItemTotalPrice}
                     </span>
                   </div>
-                  <button className='shopping-cart__cart-total-btn'>
+                  <button
+                    onClick={() => navigate('/checkout')}
+                    className={`shopping-cart__cart-total-btn ${cartItems.length === 0 ? 'disabled' : ''}`}
+                    disabled={cartItems.length === 0}
+                  >
                     Proceed to checkout
                   </button>
                 </div>

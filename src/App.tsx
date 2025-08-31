@@ -8,6 +8,7 @@ import Navigation from './components/Navigation';
 import Cart from './pages/Cart';
 import Footer from './components/Footer';
 import './App.scss';
+import Checkout from './pages/Checkout';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/products' element={<Products />} />
           <Route path='/shopping-cart' element={<Cart />} />
+          <Route path='/checkout' element={<Checkout />} />
         </Routes>
       </main>
       <Footer />

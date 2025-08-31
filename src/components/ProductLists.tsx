@@ -7,7 +7,6 @@ import { allProducts, ProductCategory, PriceRange } from '../common/data';
 import { IoHomeOutline } from 'react-icons/io5';
 import { RxCaretRight } from 'react-icons/rx';
 import { Link } from 'react-router-dom';
-import discountBannar from '../assets/images/discount-bannar.png';
 import { CiCircleRemove } from 'react-icons/ci';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../state/features/cart/cartSlice';

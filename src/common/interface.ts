@@ -88,3 +88,8 @@ export interface IPriceRange {
   id: number;
   priceRange: string;
 }
+
+export interface PaymentMethod {
+  id: string;
+  name: string;
+}
