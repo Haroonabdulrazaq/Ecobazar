@@ -12,7 +12,7 @@ A modern, responsive e-commerce platform built with React, TypeScript, and Redux
 
 ## Video Demo 🎥
 
-[Ecobazar Demo Video](https://drive.google.com/file/d/1HH_jmkdh2-cVaG99HdNd032Psd4r9LFC/view?usp=sharing)
+[Ecobazar Demo Video](https://drive.google.com/file/d/1w9XW8846MeWz8HQUGRoN0tQaSNgvr4pH/view?usp=sharing)
 
 ## Features 🚀
 
