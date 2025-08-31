@@ -1,0 +1,47 @@
+@import './utils.scss';
+@import './media-query.scss';
+.page-not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  text-align: center;
+  gap: 1rem;
+
+  &__image {
+    width: 80vw;
+    height: 40vh;
+    margin-bottom: 1.5rem;
+    background-image: url('../images/404.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  h1 {
+    font-weight: 600;
+    font-size: 4rem;
+  }
+  p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: $text-grey;
+    margin-bottom: 2rem;
+  }
+
+  &__button {
+    background: $brand-green;
+    color: $white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: darken($brand-green, 10%);
+      transform: translateY(-2px);
+    }
+  }
+}

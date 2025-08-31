@@ -7,7 +7,6 @@ import { allProducts, ProductCategory, PriceRange } from '../common/data';
 import { IoHomeOutline } from 'react-icons/io5';
 import { RxCaretRight } from 'react-icons/rx';
 import { Link } from 'react-router-dom';
-import discountBannar from '../assets/images/discount-bannar.png';
 import { CiCircleRemove } from 'react-icons/ci';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../state/features/cart/cartSlice';
@@ -150,7 +149,7 @@ const ProductLists = () => {
               <IoHomeOutline />
             </Link>
             <RxCaretRight />
-            <Link to='/products'>Products</Link>
+            <Link to='/shop'>Shop</Link>
           </div>
           <div className='product-lists__header-image'>
             <div className='product-lists__header-content'>
