@@ -45,7 +45,11 @@
       "prettier/prettier": "error",
       "no-unused-vars": "warn",
       "no-console": "warn"
-    }
+    },
+    "ignorePatterns": [
+      "src/react-app-env.d.ts",
+      "**/*.d.ts"
+    ]
   },
   "browserslist": {
     "production": [

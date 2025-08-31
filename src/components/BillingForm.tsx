@@ -3,7 +3,6 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useSelector } from 'react-redux';
 import validationSchema from '../common/validation';
 import { selectAllCartItems } from '../state/features/cart/cartSlice';
-import { PaymentMethod } from '../common/interface';
 import { RxCaretRight } from 'react-icons/rx';
 import { Link } from 'react-router-dom';
 import { IoHomeOutline } from 'react-icons/io5';
