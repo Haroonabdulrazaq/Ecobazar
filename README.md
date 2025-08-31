@@ -63,6 +63,13 @@ A modern, responsive e-commerce platform built with React, TypeScript, and Redux
 - Node.js (v16 or higher)
 - npm or yarn package manager
 
+## Stack
+
+- React + Typescript
+- Redux Toolkit
+- SCSS + BEM Styling
+- TailwindCSS
+
 ### Installation Steps
 
 1. **Clone the repository**
