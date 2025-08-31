@@ -12,7 +12,7 @@ const ShoppingCart = () => {
   const cartItems = useSelector((state: RootState) => state.cart.items);
   const cartItemTotalPrice = useSelector((state: RootState) =>
     state.cart.items.reduce((acc, item) => acc + item.price * item.quantity, 0)
-  );
+  ).toFixed(2);
   const [couponCode, setCouponCode] = useState('');
   const [processingCoupon, setProcessingCoupon] = useState(false);
   const [error, setError] = useState('');

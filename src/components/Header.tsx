@@ -13,10 +13,9 @@ const Header = () => {
     0
   );
 
-  const cartItemTotalPrice = cartItems.reduce(
-    (totalPrice, item) => totalPrice + item.price * item.quantity,
-    0
-  );
+  const cartItemTotalPrice = cartItems
+    .reduce((totalPrice, item) => totalPrice + item.price * item.quantity, 0)
+    .toFixed(2);
 
   return (
     <header className='header'>
