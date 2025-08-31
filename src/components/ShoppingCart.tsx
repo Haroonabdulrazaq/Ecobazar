@@ -67,7 +67,7 @@ const ShoppingCart = () => {
               <IoHomeOutline />
             </Link>
             <RxCaretRight />
-            <Link to='/shopping-cart'>Shopping cart</Link>
+            <Link to='/shopping-cart'>Shopping Cart</Link>
           </div>
         </div>
         <div className='shopping-cart-content global-padding'>
