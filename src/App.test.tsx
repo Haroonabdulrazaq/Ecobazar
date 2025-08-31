@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+import App from './App';
 
 jest.mock('./App', () => {
   return function MockApp() {
@@ -16,8 +17,6 @@ jest.mock('./App', () => {
     );
   };
 });
-
-import App from './App';
 
 test('renders main app layout with navigation components', () => {
   render(<App />);

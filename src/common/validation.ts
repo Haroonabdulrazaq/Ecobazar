@@ -30,9 +30,10 @@ const validationSchema = Yup.object().shape({
     .email('Please enter a valid email address')
     .required('Email is required')
     .max(100, 'Email must be less than 100 characters'),
-  phone: Yup.string()
-    .required('Phone number is required')
-    .matches(/^[+]?[1-9][\d]{0,15}$/, 'Please enter a valid phone number'),
+  phone: Yup.string().matches(
+    /^[+]?[0-9][\d]{0,15}$/,
+    'Please enter a valid phone number'
+  ),
   isShippingAddressSame: Yup.boolean(),
   alternateShippingAddress: Yup.string().when('isShippingAddressSame', {
     is: true,

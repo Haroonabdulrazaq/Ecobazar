@@ -262,7 +262,7 @@ const BillingForm = () => {
                   </div>
                   <div className='billing-form__field'>
                     <label htmlFor='phone' className='billing-form__label'>
-                      Phone <span className='text-red-300'>*</span>
+                      Phone
                     </label>
                     <Field
                       type='tel'
