@@ -1,24 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Home from './pages/Home';
+import { Routes, Route } from 'react-router-dom';
+import Products from './pages/Products';
+import TopBar from './components/TopBar';
+import Header from './components/Header';
+import Navigation from './components/Navigation';
+import Cart from './pages/Cart';
+import Footer from './components/Footer';
+import './App.scss';
+import Checkout from './pages/Checkout';
+import PageNotFound from './pages/PageNotFound';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <TopBar />
+      <div className='sticky-header'>
+        <Header />
+        <Navigation />
+      </div>
+      <main className='main-content'>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/shop' element={<Products />} />
+          <Route path='/shopping-cart' element={<Cart />} />
+          <Route path='/checkout' element={<Checkout />} />
+          <Route path='*' element={<PageNotFound />} />
+        </Routes>
+      </main>
+      <Footer />
     </div>
   );
 }
