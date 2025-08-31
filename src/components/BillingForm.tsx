@@ -4,31 +4,13 @@ import { useSelector } from 'react-redux';
 import validationSchema from '../common/validation';
 import { selectAllCartItems } from '../state/features/cart/cartSlice';
 import { PaymentMethod } from '../common/interface';
-
-interface BillingFormValues {
-  firstName: string;
-  lastName: string;
-  companyName: string;
-  streetAddress: string;
-  country: string;
-  state: string;
-  zipCode: string;
-  email: string;
-  phone: string;
-  isShippingAddressSame: boolean;
-  alternateShippingAddress: string;
-  orderNotes: string;
-  paymentMethod: string;
-}
+import { RxCaretRight } from 'react-icons/rx';
+import { Link } from 'react-router-dom';
+import { IoHomeOutline } from 'react-icons/io5';
+import { BillingFormValues } from '../common/interface';
 
 const BillingForm = () => {
   const cartItems = useSelector(selectAllCartItems);
-
-  const paymentMethods: PaymentMethod[] = [
-    { id: 'cod', name: 'Cash on delivery' },
-    { id: 'paypal', name: 'Paypal' },
-    { id: 'amazon', name: 'Amazon pay' },
-  ];
 
   const initialValues: BillingFormValues = {
     firstName: '',
@@ -43,10 +25,9 @@ const BillingForm = () => {
     isShippingAddressSame: false,
     alternateShippingAddress: '',
     orderNotes: '',
-    paymentMethod: 'cod', // Default to cash on delivery
+    paymentMethod: 'cod',
   };
 
-  // Calculate totals
   const subtotal = cartItems.reduce(
     (total, item) => total + item.price * item.quantity,
     0
@@ -60,8 +41,19 @@ const BillingForm = () => {
   };
 
   return (
-    <div className='billing-form global-padding'>
-      <div className='billing-form__container'>
+    <div className='billing-form '>
+      <div className='billing-form__header'>
+        <div className='billing-form__header-breadcrumbs global-padding'>
+          <Link to='/'>
+            <IoHomeOutline />
+          </Link>
+          <RxCaretRight />
+          <Link to='/shopping-cart'>Shopping Cart</Link>
+          <RxCaretRight />
+          <Link to='/checkout'>Checkout</Link>
+        </div>
+      </div>
+      <div className='billing-form__container global-padding'>
         <div className='billing-form__form'>
           <h2 className='billing-form__form-title'>Billing Information</h2>
           <Formik

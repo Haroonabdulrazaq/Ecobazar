@@ -93,3 +93,19 @@ export interface PaymentMethod {
   id: string;
   name: string;
 }
+
+export interface BillingFormValues {
+  firstName: string;
+  lastName: string;
+  companyName: string;
+  streetAddress: string;
+  country: string;
+  state: string;
+  zipCode: string;
+  email: string;
+  phone: string;
+  isShippingAddressSame: boolean;
+  alternateShippingAddress: string;
+  orderNotes: string;
+  paymentMethod: string;
+}
