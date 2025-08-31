@@ -392,7 +392,7 @@ const BillingForm = () => {
                     className='billing-form__cart-item-image'
                   />
                   <span className='billing-form__cart-item-name'>
-                    {item.name}
+                    {item.name} x {item.quantity}
                   </span>
                 </div>
                 <div className='billing-form__cart-item-price'>
