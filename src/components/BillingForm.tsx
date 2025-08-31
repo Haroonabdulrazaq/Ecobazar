@@ -34,11 +34,15 @@ const BillingForm = () => {
 
   const total = subtotal;
 
-  const handleSubmit = (values: BillingFormValues, { setSubmitting }: any) => {
+  const handleSubmit = (
+    values: BillingFormValues,
+    { setSubmitting, resetForm }: any
+  ) => {
     setTimeout(() => {
       // eslint-disable-next-line no-console
       console.log(values);
       setSubmitting(false);
+      resetForm();
     }, 5000);
   };
   return (
