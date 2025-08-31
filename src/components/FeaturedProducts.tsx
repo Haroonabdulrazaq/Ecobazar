@@ -10,7 +10,15 @@ import {
   topRatedData,
 } from '../common/data';
 import { useState } from 'react';
-import { IBestSeller, IHotdeal, ITopRated } from '../common/interface';
+import {
+  IBestSeller,
+  IHotdeal,
+  IProduct,
+  ITopRated,
+} from '../common/interface';
+import { addToCart } from '../state/features/cart/cartSlice';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 const FeaturedProducts = () => {
   const [hoveredProduct, setHoveredProduct] = useState<number | null>(null);
@@ -18,6 +26,12 @@ const FeaturedProducts = () => {
     productId: number;
     type: string;
   } | null>(null);
+
+  const dispatch = useDispatch();
+
+  const handleAddToCart = (product: IProduct) => {
+    dispatch(addToCart({ ...product, quantity: 1 }));
+  };
 
   const renderStars = (rating: number) => {
     const stars = [];
@@ -99,7 +113,7 @@ const FeaturedProducts = () => {
                 <div className='product-card__actions'>
                   <button
                     className='product-card__cart-btn'
-                    onClick={() => handleIconClick(product.id, 'cart')}
+                    onClick={() => handleAddToCart(product as IProduct)}
                   >
                     <PiHandbagThin size={20} />
                   </button>
@@ -120,6 +134,7 @@ const FeaturedProducts = () => {
           handleIconClick={handleIconClick}
           setHoveredProduct={setHoveredProduct}
           renderStars={renderStars}
+          handleAddToCart={handleAddToCart}
         />
 
         <BestSellers
@@ -128,6 +143,7 @@ const FeaturedProducts = () => {
           handleIconClick={handleIconClick}
           setHoveredProduct={setHoveredProduct}
           renderStars={renderStars}
+          handleAddToCart={handleAddToCart}
         />
 
         <TopRated
@@ -136,6 +152,7 @@ const FeaturedProducts = () => {
           handleIconClick={handleIconClick}
           setHoveredProduct={setHoveredProduct}
           renderStars={renderStars}
+          handleAddToCart={handleAddToCart}
         />
         <SummerDeals />
       </div>
@@ -151,12 +168,14 @@ const Hotdeals = ({
   handleIconClick,
   setHoveredProduct,
   renderStars,
+  handleAddToCart,
 }: {
   products: IHotdeal[];
   hoveredProduct: number | null;
   handleIconClick: (productId: number, type: string) => void;
   setHoveredProduct: (id: number | null) => void;
   renderStars: (rating: number) => React.ReactElement[];
+  handleAddToCart: (product: IProduct) => void;
 }) => {
   return (
     <div className='hotdeals'>
@@ -194,7 +213,7 @@ const Hotdeals = ({
                       <div className='hotdeal-card__actions'>
                         <button
                           className='hotdeal-card__action-btn'
-                          onClick={() => handleIconClick(product.id, 'cart')}
+                          onClick={() => handleAddToCart(product as IProduct)}
                           aria-label='Add to cart'
                         >
                           <PiHandbagThin size={20} />
@@ -232,12 +251,14 @@ const BestSellers = ({
   handleIconClick,
   setHoveredProduct,
   renderStars,
+  handleAddToCart,
 }: {
   products: IBestSeller[];
   hoveredProduct: number | null;
   handleIconClick: (productId: number, type: string) => void;
   setHoveredProduct: (id: number | null) => void;
   renderStars: (rating: number) => React.ReactElement[];
+  handleAddToCart: (product: IProduct) => void;
 }) => {
   return (
     <div className='bestsellers'>
@@ -275,7 +296,7 @@ const BestSellers = ({
                       <div className='bestseller-card__actions'>
                         <button
                           className='bestseller-card__action-btn'
-                          onClick={() => handleIconClick(product.id, 'cart')}
+                          onClick={() => handleAddToCart(product as IProduct)}
                           aria-label='Add to cart'
                         >
                           <PiHandbagThin size={20} />
@@ -313,12 +334,14 @@ const TopRated = ({
   handleIconClick,
   setHoveredProduct,
   renderStars,
+  handleAddToCart,
 }: {
   products: ITopRated[];
   hoveredProduct: number | null;
   handleIconClick: (productId: number, type: string) => void;
   setHoveredProduct: (id: number | null) => void;
   renderStars: (rating: number) => React.ReactElement[];
+  handleAddToCart: (product: IProduct) => void;
 }) => {
   return (
     <div className='toprated'>
@@ -356,7 +379,7 @@ const TopRated = ({
                       <div className='toprated-card__actions'>
                         <button
                           className='toprated-card__action-btn'
-                          onClick={() => handleIconClick(product.id, 'cart')}
+                          onClick={() => handleAddToCart(product as IProduct)}
                           aria-label='Add to cart'
                         >
                           <PiHandbagThin size={20} />
@@ -389,6 +412,7 @@ const TopRated = ({
 };
 
 const SummerDeals = () => {
+  const navigate = useNavigate();
   return (
     <div className='summer-deals'>
       <div className='summer-deals__image-container'>
@@ -401,7 +425,12 @@ const SummerDeals = () => {
         <div className='summer-deals__overlay'>
           <h3 className='summer-deals__title'>SUMMER SALE</h3>
           <p className='summer-deals__discount'>75% off</p>
-          <button className='summer-deals__button'>Shop now →</button>
+          <button
+            className='summer-deals__button'
+            onClick={() => navigate('/shop')}
+          >
+            Shop now →
+          </button>
         </div>
       </div>
     </div>

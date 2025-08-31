@@ -7,6 +7,7 @@ import { IPerk } from '../common/interface';
 import { slides } from '../common/data';
 
 import '../assets/stylesheets/Carousel.scss';
+import { useNavigate } from 'react-router-dom';
 
 const Perks = () => {
   const perks: IPerk[] = [
@@ -55,7 +56,7 @@ const Perks = () => {
 
 const Carousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-
+  const navigate = useNavigate();
   // Auto-advance slides
   useEffect(() => {
     const interval = setInterval(() => {
@@ -101,7 +102,10 @@ const Carousel = () => {
                     <span className='carousel__sale-highlight'>30% OFF</span>
                   </p>
                   <p className='carousel__subtitle'>{slide.subtitle}</p>
-                  <button className='carousel__button'>
+                  <button
+                    className='carousel__button'
+                    onClick={() => navigate('/shop')}
+                  >
                     Shop now
                     <FaArrowRight className='carousel__button-icon' />
                   </button>

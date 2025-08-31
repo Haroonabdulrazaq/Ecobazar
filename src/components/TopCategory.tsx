@@ -6,8 +6,10 @@ import { FaArrowRight, FaArrowLeft } from 'react-icons/fa6';
 import { topCategoryItems } from '../common/data';
 
 import '../assets/stylesheets/top-category.scss';
+import { useNavigate } from 'react-router-dom';
 
 const TopCategory = () => {
+  const navigate = useNavigate();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [countdown, setCountdown] = useState({
     days: 0,
@@ -184,7 +186,12 @@ const TopCategory = () => {
                   <span className='countdown-label'>Seconds</span>
                 </div>
               </div>
-              <button className='banner-button'>Shop now →</button>
+              <button
+                className='banner-button'
+                onClick={() => navigate('/shop')}
+              >
+                Shop now →
+              </button>
             </div>
           </div>
         </div>
@@ -200,7 +207,12 @@ const TopCategory = () => {
               <h3 className='banner-subtitle'>85% FAT FREE</h3>
               <h2 className='banner-main-title'>Low-Fat Meat</h2>
               <p className='banner-price'>Started at $79.99</p>
-              <button className='banner-button'>Shop now →</button>
+              <button
+                className='banner-button'
+                onClick={() => navigate('/shop')}
+              >
+                Shop now →
+              </button>
             </div>
           </div>
         </div>
@@ -220,7 +232,12 @@ const TopCategory = () => {
                 100% Fresh Fruit
               </h2>
               <p className='banner-discount'>upto 64% OFF</p>
-              <button className='banner-button'>Shop now →</button>
+              <button
+                className='banner-button'
+                onClick={() => navigate('/shop')}
+              >
+                Shop now →
+              </button>
             </div>
           </div>
         </div>

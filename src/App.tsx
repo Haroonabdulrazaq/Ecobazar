@@ -9,6 +9,7 @@ import Cart from './pages/Cart';
 import Footer from './components/Footer';
 import './App.scss';
 import Checkout from './pages/Checkout';
+import PageNotFound from './pages/PageNotFound';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path='/shop' element={<Products />} />
           <Route path='/shopping-cart' element={<Cart />} />
           <Route path='/checkout' element={<Checkout />} />
+          <Route path='*' element={<PageNotFound />} />
         </Routes>
       </main>
       <Footer />
