@@ -1,6 +1,7 @@
 import '../assets/stylesheets/billing-form.scss';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
+import { useState } from 'react';
 import validationSchema from '../common/validation';
 import {
   clearCart,
@@ -9,11 +10,13 @@ import {
 import { RxCaretRight } from 'react-icons/rx';
 import { Link } from 'react-router-dom';
 import { IoHomeOutline } from 'react-icons/io5';
+import { FaTruckFast } from 'react-icons/fa6';
 import { BillingFormValues } from '../common/interface';
 
 const BillingForm = () => {
   const cartItems = useSelector(selectAllCartItems);
   const dispatch = useDispatch();
+  const [showOrderPopup, setShowOrderPopup] = useState(false);
 
   const initialValues: BillingFormValues = {
     firstName: '',
@@ -48,7 +51,12 @@ const BillingForm = () => {
       setSubmitting(false);
       resetForm();
       dispatch(clearCart());
+      setShowOrderPopup(true);
     }, 5000);
+  };
+
+  const handleClosePopup = () => {
+    setShowOrderPopup(false);
   };
   return (
     <div className='billing-form '>
@@ -448,6 +456,28 @@ const BillingForm = () => {
           </div>
         </div>
       </div>
+      {showOrderPopup && (
+        <div className='billing-form__popup-overlay'>
+          <div className='billing-form__popup'>
+            <div className='billing-form__popup-content'>
+              <FaTruckFast className='billing-form__popup-icon' />
+              <h3 className='billing-form__popup-title'>
+                Order is on its way!
+              </h3>
+              <p className='billing-form__popup-message'>
+                Thank you for your order. You'll receive a confirmation email
+                shortly.
+              </p>
+              <button
+                onClick={handleClosePopup}
+                className='billing-form__popup-button'
+              >
+                OK
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

@@ -465,3 +465,123 @@
   height: 1px;
   background-color: $input-grey-outline;
 }
+
+// Order Confirmation Popup Styles
+.billing-form__popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.billing-form__popup {
+  background-color: $white;
+  border-radius: 1.2rem;
+  padding: 3rem;
+  max-width: 40rem;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.15);
+  animation: slideIn 0.3s ease-out;
+}
+
+.billing-form__popup-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.billing-form__popup-icon {
+  font-size: 4rem;
+  color: $brand-green;
+  margin-bottom: 1rem;
+}
+
+.billing-form__popup-title {
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: $black;
+  margin: 0;
+}
+
+.billing-form__popup-message {
+  font-size: 1.6rem;
+  color: $mild-grey;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.billing-form__popup-button {
+  background-color: $brand-green;
+  color: $white;
+  border: none;
+  border-radius: 0.8rem;
+  padding: 1.2rem 3rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  min-width: 12rem;
+
+  &:hover {
+    background-color: darken($brand-green, 10%);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-2rem) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@include responsive(mobile) {
+  .billing-form__popup {
+    padding: 2rem;
+    margin: 2rem;
+  }
+
+  .billing-form__popup-icon {
+    font-size: 3rem;
+  }
+
+  .billing-form__popup-title {
+    font-size: 2rem;
+  }
+
+  .billing-form__popup-message {
+    font-size: 1.4rem;
+  }
+
+  .billing-form__popup-button {
+    font-size: 1.4rem;
+    padding: 1rem 2.4rem;
+  }
+}
