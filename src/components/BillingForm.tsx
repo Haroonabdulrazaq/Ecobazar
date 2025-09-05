@@ -440,16 +440,16 @@ const BillingForm = () => {
                   type='radio'
                   defaultChecked
                   id='cod'
-                  name='cash on delivery'
+                  name='payment-method'
                 />
                 <label htmlFor='cod'>Cash on delivery</label>
               </div>
               <div className='payment-method__option'>
-                <input type='radio' id='paypal' name='paypal' />
+                <input type='radio' id='paypal' name='payment-method' />
                 <label htmlFor='payment-method-1'>Paypal</label>
               </div>
               <div className='payment-method__option'>
-                <input type='radio' id='amazon-pay' name='amazon-pay' />
+                <input type='radio' id='amazon-pay' name='payment-method' />
                 <label htmlFor='payment-method-1'>Amazon Pay</label>
               </div>
             </div>
